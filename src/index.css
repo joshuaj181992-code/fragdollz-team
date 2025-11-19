@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:wght@600;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  /* Animated gradient background */
+  background: linear-gradient(120deg, #181e3a, #44107a, #fc4ace, #ff1fb3, #181e3a);
+  background-size: 200% 200%;
+  animation: animateBg 12s ease-in-out infinite;
+  color: #fff;
+}
+
+@keyframes animateBg {
+  0% {background-position: 0% 50%;}
+  33% {background-position: 100% 50%;}
+  66% {background-position: 0% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.dark {
+  color: #fff;
+}
+
+.light {
+  color: #111;
+  /* Optionally override background here if needed for light mode */
+}
+
+a { color: #ff1fb3; }
