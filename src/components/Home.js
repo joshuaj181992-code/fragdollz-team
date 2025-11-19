@@ -37,13 +37,14 @@ export default function Home() {
         Next-gen Gamer Girl Power. <span style={{ color: "var(--primary)" }}>Win the Crowd.</span>
       </p>
       {/* Animated controller */}
-      <div style={{
-        marginTop: 12, marginBottom: 6,
-        filter: "drop-shadow(0 0 18px var(--primary))",
-        animation: "floating 2.1s infinite"
-      }}>
-        <img src="/images/controller.png" style={{ width: 150 }} alt="controller" />
-      </div>
+      
+<div style={{
+  marginTop: 12, marginBottom: 6,
+  filter: "drop-shadow(0 0 18px var(--primary))",
+  animation: "floating 2.1s infinite"
+}}>
+  <img src="/images/controller.png" alt="Controller" width={200} height={200} />
+</div>
       <span style={{
         background: "rgba(250,10,187,0.09)",
         padding: "8px 25px",
@@ -53,6 +54,7 @@ export default function Home() {
         fontWeight: "bold",
         marginTop: 36,
         textShadow: "0 2px 8px #fc4ace88"
+        
       }}>
         #FRAGDOLLZ
       </span>
