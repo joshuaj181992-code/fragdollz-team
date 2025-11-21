@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import "./esports-theme.css";
-import React from "react";
 
 const players = [
   {
@@ -53,30 +53,45 @@ const players = [
 ];
 
 export default function Roster() {
+  const [flipped, setFlipped] = useState(Array(players.length).fill(false));
+  const flipCard = idx => {
+    setFlipped(f => f.map((fl, i) => i === idx ? !fl : fl));
+  };
   return (
-    <div className="esports-roster">
+    <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center", padding:"42px 0 0 0"}}>
       {players.map((player, idx) => (
-        <div className="player-card" key={idx}>
-          <div className="player-avatar-wrapper">
-            <span className="player-avatar-bg"></span>
-            <img src={player.img} alt={player.name} className="player-avatar-img"/>
-          </div>
-          <h3>{player.name}</h3>
-          <div className="player-handle">{player.handle}</div>
-          <div className="player-role">{player.role}</div>
-          <div style={{margin:"8px 0 0 0", color:"#dadada"}}>
-            {player.quote}
-          </div>
-          <div className="player-socials">
-            <a href={player.socials.twitch} target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-twitch"></i>
-            </a>
-            <a href={player.socials.twitter} target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-            <a href={player.socials.instagram} target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-instagram"></i>
-            </a>
+        <div
+          className={`flip-card${flipped[idx] ? " flip" : ""}`}
+          key={idx}
+          onClick={() => flipCard(idx)}
+          tabIndex={0}
+        >
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img src={player.img} alt={player.name} style={{width:"96px", borderRadius:"14px", margin:"17px 0 15px 0", border:"2px solid #fc41b8"}} />
+              <h3>{player.name}</h3>
+              <div style={{color: "#fc41b8", fontWeight:"bold"}}>{player.role}</div>
+              <div>{player.handle}</div>
+              <div style={{marginTop: 20, fontSize: "0.95rem", opacity: 0.8}}>Click card for more</div>
+            </div>
+            <div className="flip-card-back">
+              <div style={{marginBottom: 10, fontStyle: "italic", color: "#fc41b8"}}>
+                "{player.quote}"
+              </div>
+              <div style={{margin: "7px 0", color: "#fff"}}>
+                <b>Connect:</b><br />
+                <a href={player.socials.twitch} target="_blank" rel="noopener noreferrer" style={{marginRight: "14px", color: "#a991e1"}}>
+                  <i className="fa-brands fa-twitch" /> Twitch
+                </a>
+                <a href={player.socials.twitter} target="_blank" rel="noopener noreferrer" style={{marginRight: "14px", color: "#5daaff"}}>
+                  <i className="fa-brands fa-twitter" /> Twitter
+                </a>
+                <a href={player.socials.instagram} target="_blank" rel="noopener noreferrer" style={{color: "#ff66b2"}}>
+                  <i className="fa-brands fa-instagram" /> Instagram
+                </a>
+              </div>
+              <div style={{fontSize:"0.78rem", color:"#ccc", marginTop:"12px"}}>(Click to flip back)</div>
+            </div>
           </div>
         </div>
       ))}

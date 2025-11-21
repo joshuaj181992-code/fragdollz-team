@@ -3,25 +3,25 @@ import React from "react";
 
 const sponsors = [
   {
-    name: "GameFuel",
+    name: "Name Less",
     img: "/images/sp1.png",
     url: "https://gamefuel.com",
     tagline: "Fueling Champions Everywhere!"
   },
   {
-    name: "HyperGear",
+    name: "TrUgamers",
     img: "/images/sp2.png",
-    url: "https://hypergear.com",
-    tagline: "Next Level Gaming Accessories"
+    url: "https://www.trugamer.pro/",
+    tagline: "Next Level Gaming News hub"
   },
   {
-    name: "PowerByte",
+    name: "Chariety Gamers",
     img: "/images/sp3.png",
     url: "https://powerbyte.io",
     tagline: "Performance PCs for Pros"
   },
    {
-    name: "PowerByte",
+    name: "Battle of the Orgs",
     img: "/images/sp4.png",
     url: "https://powerbyte.io",
     tagline: "Performance PCs for Pros"

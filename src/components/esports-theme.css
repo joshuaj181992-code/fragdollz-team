@@ -266,3 +266,202 @@ body,
 .esports-bg {
   padding-top: 90px; /* Adjust to match (or be a bit more than) nav height */
 }
+/* ---- HERO CALL-TO-ACTION BUTTON ---- */
+.hero-cta-btn {
+  display: inline-block;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #fc41b8, #5adaff);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 0 24px #fc41b8bb, 0 0 90px #5adaff33 inset;
+  padding: 20px 46px;
+  margin: 32px 0 16px 0;
+  cursor: pointer;
+  position: relative;
+  animation: cta-glow 1.7s infinite alternate;
+  letter-spacing: 1px;
+  transition: filter 0.20s;
+}
+.hero-cta-btn:hover {
+  filter: brightness(1.15) saturate(1.12);
+  animation: cta-glow-fast 0.4s 1;
+}
+@keyframes cta-glow {
+  from { box-shadow: 0 0 24px #fc41b8bb, 0 0 64px #5adaff44 inset;}
+  to { box-shadow: 0 0 48px #5adaff, 0 0 135px #fc41b833 inset;}
+}
+@keyframes cta-glow-fast {
+  from { box-shadow: 0 0 24px #fc41b8bb, 0 0 64px #5adaff44 inset;}
+  to { box-shadow: 0 0 80px #fc41b8cc, 0 0 180px #5adafff6 inset;}
+}
+
+/* ---- SOCIAL BADGES HERO ---- */
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 22px 0 0 0;
+}
+.hero-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.3rem;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#130813 50%,#2b0c39 100%);
+  box-shadow: 0 0 32px #fc41b899, 0 3px 16px #5adaff77;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.12s, box-shadow 0.11s, background 0.17s;
+  border: 2px solid #fc41b8;
+  position: relative;
+}
+.hero-social-btn:hover {
+  color: #5adaff;
+  background: linear-gradient(135deg,#282747 30%,#fc41b8 120%);
+  transform: scale(1.11) rotate(-3deg);
+  box-shadow: 0 0 52px #5adaffcc, 0 2px 26px #fc41b8b9;
+}
+.hero-social-btn i {
+  pointer-events: none;
+}
+
+/* ---- CYBER ANGLE BG OVERLAYS (for event vibes) ---- */
+.hero-cyber-bg {
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-cyber-bg-1, .hero-cyber-bg-2 {
+  position: absolute;
+  width: 76vw;
+  height: 24vw;
+  filter: blur(12px) opacity(0.12);
+  border-radius: 44vw;
+  z-index: 1;
+}
+.hero-cyber-bg-1 {
+  top: -70px;
+  left: -18vw;
+  background: linear-gradient(110deg, #fc41b8 0%, #5adaff 85%);
+  transform: rotate(-10deg);
+}
+.hero-cyber-bg-2 {
+  top: 100px;
+  right: -24vw;
+  background: linear-gradient(85deg, #5adaff 0%, #fc41b8ca 100%);
+  transform: rotate(6deg);
+}
+
+/* ---- PIXEL SPARKLE/GIRD MESH OVERLAY ---- */
+.hero-pixel-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 420px;
+  pointer-events: none;
+  opacity: 0.33;
+  background-image: 
+    linear-gradient(90deg, #fff2 1px, transparent 1px),
+    linear-gradient(180deg, #fff2 1px, transparent 1px);
+  background-size: 25px 25px;
+  z-index: 2;
+  mix-blend-mode: lighten;
+}
+/* Flip card container */
+.flip-card {
+  background: transparent;
+  width: 290px;
+  height: 370px;
+  perspective: 1000px;
+  margin: 18px;
+  display: inline-block;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #1c0832;
+  box-shadow: 0 0 10px #fc41b880, 0 0 32px #5adaff33;
+  border-radius: 26px;
+  overflow: hidden;
+  color: #fff;
+}
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 22px;
+  transform: rotateY(180deg);
+  background: #2b0c39;
+}
+.flip-card-back .badge {
+  font-size: 1rem;
+  background: #5adaff33;
+  padding: 4px 10px;
+  border-radius: 9px;
+  margin-right: 7px;
+  color: #5adaff;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.flip-card-back .fav-list {
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.empower-banner {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(90deg,#fc41b8,#5adaff40,#30143f 90%);
+  font-family: 'Orbitron',Arial,sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: #fff;
+  border-radius: 0 0 30px 30px;
+  padding: 18px 0 16px 0;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.empower-banner span {
+  display: inline-block;
+  animation: empower-cycle 6s infinite alternate;
+  opacity: 0;
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: 18px;
+  width: 90vw;
+  max-width: 750px;
+}
+.empower-banner span:nth-child(1) { animation-delay: 0s; }
+.empower-banner span:nth-child(2) { animation-delay: 2s; }
+.empower-banner span:nth-child(3) { animation-delay: 4s; }
+@keyframes empower-cycle {
+  0%   { opacity: 1; }
+  28%  { opacity: 1; }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
