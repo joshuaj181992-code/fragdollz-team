@@ -6,7 +6,7 @@ const players = [
     name: "GamerBelle",
     handle: "@gamerbelle",
     role: "Captain",
-    img: "/images/teammate1.png",
+    img: "/images/fd2.png",
     socials: {
       twitch: "https://twitch.tv/gamerbelle",
       twitter: "https://twitter.com/gamerbelle",
@@ -18,7 +18,7 @@ const players = [
     name: "SnipaQueen",
     handle: "@snipaqueen",
     role: "Sniper",
-    img: "/images/teammate2.png",
+    img: "/images/fd2.png",
     socials: {
       twitch: "https://twitch.tv/snipaqueen",
       twitter: "https://twitter.com/snipaqueen",
@@ -26,7 +26,6 @@ const players = [
     },
     quote: "No scope, all style."
   }
-  // Add more teammates here using the same format!
 ];
 
 export default function Roster() {
