@@ -156,3 +156,113 @@ body {
   color: #5adaff;
   transform: scale(1.22);
 }
+.sponsor-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin: 36px 0 0 0;
+  padding: 0 12px;
+}
+
+.sponsor-card {
+  background: linear-gradient(130deg, #1c0832 50%, #361684 100%);
+  border: 3px solid #fc41b8;
+  border-radius: 26px;
+  box-shadow: 0 0 44px #5adaff92, 0 2px 14px #fc41b85e;
+  width: 240px;
+  min-height: 320px;
+  max-width: 90vw;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 18px 24px 18px;
+  transition: transform 0.15s, box-shadow 0.12s;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  cursor: pointer;
+}
+.sponsor-card:hover {
+  transform: scale(1.045) translateY(-8px);
+  box-shadow: 0 0 72px #5adaffff, 0 2px 20px #fc41b8b4;
+  z-index: 2;
+}
+.sponsor-logo-bg {
+  position: absolute;
+  top: 33px; left: 50%; transform: translateX(-50%);
+  width: 115px; height: 115px;
+  background: radial-gradient(circle, #fc41b8 15%, #5adaff44 90%);
+  border-radius: 50%;
+  filter: blur(27px) opacity(0.54);
+  z-index: 0;
+  pointer-events: none;
+}
+.sponsor-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  background: #130916;
+  border: 2px solid #5adaff;
+  box-shadow: 0 0 18px #fc41b858;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.sponsor-name {
+  margin-top: 7px;
+  color: #fc41b8;
+  font-weight: bold;
+  font-size: 1.22rem;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #5adaff78;
+}
+
+.sponsor-tagline {
+  margin-top: 8px;
+  color: #fceaff;
+  opacity: 0.90;
+  font-size: 1.07rem;
+  font-family: inherit;
+  text-shadow: 0 1px 7px #fc41b873;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  gap: 48px; /* Space between each link */
+  padding: 28px 0 24px 0; /* Top and bottom space */
+  background: #1c0832;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 0 12px #fc41b850;
+}
+
+nav a {
+  color: #fc41b8;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-size: 1.45rem;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 0.14s, text-shadow 0.14s;
+  text-shadow: 0 2px 7px #5adaff75;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: #5adaff;
+  border-bottom: 2px solid #5adaff;
+  text-shadow: 0 2px 18px #fff5;
+}
+body,
+.esports-bg {
+  padding-top: 90px; /* Adjust to match (or be a bit more than) nav height */
+}

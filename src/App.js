@@ -1,31 +1,25 @@
-
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Roster from "./components/Roster";
-import Social from "./components/Social";
 import Highlights from "./components/Highlights";
-import Footer from "./components/Footer";
-import DarkModeToggle from "./components/DarkModeToggle";
-import "./index.css";
+import Social from "./components/Social";
+import Sponsored from "./components/Sponsored";
+import Navbar from "./components/Navbar";
 
-export default function App() {
-  const [dark, setDark] = useState(true);
-
+function App() {
   return (
-    <div className={dark ? "dark" : "light"}>
-      <BrowserRouter>
-        <DarkModeToggle dark={dark} setDark={setDark} />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/roster" element={<Roster />} />
-          <Route path="/social" element={<Social />} />
-          <Route path="/highlights" element={<Highlights />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/roster" element={<Roster />} />
+        <Route path="/highlights" element={<Highlights />} />
+        <Route path="/social" element={<Social />} />
+        <Route path="/sponsored" element={<Sponsored />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;

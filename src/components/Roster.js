@@ -6,7 +6,7 @@ const players = [
     name: "GamerBelle",
     handle: "@gamerbelle",
     role: "Captain",
-    img: "/images/fd2.png",
+    img: "/images/gg1.png",
     socials: {
       twitch: "https://twitch.tv/gamerbelle",
       twitter: "https://twitter.com/gamerbelle",
@@ -18,14 +18,38 @@ const players = [
     name: "SnipaQueen",
     handle: "@snipaqueen",
     role: "Sniper",
-    img: "/images/fd2.png",
+    img: "/images/gg2.png",
     socials: {
       twitch: "https://twitch.tv/snipaqueen",
       twitter: "https://twitter.com/snipaqueen",
       instagram: "https://instagram.com/snipaqueen"
     },
     quote: "No scope, all style."
-  }
+  },
+  {
+    name: "Brittany",
+    handle: "@gamerbelle",
+    role: "Explosives",
+    img: "/images/gg3.png",
+    socials: {
+      twitch: "https://twitch.tv/gamerbelle",
+      twitter: "https://twitter.com/gamerbelle",
+      instagram: "https://instagram.com/gamerbelle"
+    },
+    quote: "Bringing the heat and the hype!"
+  },
+  {
+    name: "Ashley",
+    handle: "@gamerbelle",
+    role: "Camper",
+    img: "/images/gg4.png",
+    socials: {
+      twitch: "https://twitch.tv/gamerbelle",
+      twitter: "https://twitter.com/gamerbelle",
+      instagram: "https://instagram.com/gamerbelle"
+    },
+    quote: "Bringing the heat and the hype!"
+  },
 ];
 
 export default function Roster() {
