@@ -43,7 +43,7 @@ export default function Home() {
   filter: "drop-shadow(0 0 18px var(--primary))",
   animation: "floating 2.1s infinite"
 }}>
-  <img src="/images/controller.png" alt="controller" width={200} height={200} />
+  <img src="/images/Controller.png" alt="Controller" width={200} height={200} />
 </div>
       <span style={{
         background: "rgba(250,10,187,0.09)",
