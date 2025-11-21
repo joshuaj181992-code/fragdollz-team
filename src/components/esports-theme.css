@@ -465,3 +465,93 @@ body,
   33%  { opacity: 0; }
   100% { opacity: 0; }
 }
+/* Mobile Nav & Body */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 0 10px 0;
+    font-size: 1rem;
+    min-height: 54px;
+  }
+  nav a {
+    font-size: 1.18rem;
+    letter-spacing: 1px;
+    padding: 4px 0 2px 0;
+  }
+  body, .esports-bg {
+    padding-top: 70px !important;
+    min-height: 100vh;
+  }
+}
+
+/* Responsive Hero Section */
+@media (max-width: 700px) {
+  .esports-title {
+    font-size: 2.3rem !important;
+    text-align: center;
+    margin-top: 14px;
+  }
+  .empower-banner {
+    font-size: 1rem;
+    padding: 12px 0 10px 0;
+  }
+  .hero-socials {
+    gap: 12px;
+  }
+  .hero-cta-btn {
+    font-size: 1.2rem;
+    padding: 14px 24px;
+    margin: 19px 0 9px 0;
+  }
+  .hero-cyber-bg-1, .hero-cyber-bg-2, .hero-pixel-overlay {
+    height: 160px;
+  }
+  .hero-cyber-bg-1, .hero-cyber-bg-2 {
+    width: 99vw;
+    min-width: 260px;
+    filter: blur(8px) opacity(0.14);
+    top: -14px;
+  }
+  .hero-cyber-bg-2 {
+    right: -10vw;
+    top: 55px;
+  }
+}
+
+/* Roster Cards Responsive */
+@media (max-width: 700px) {
+  .flip-card {
+    width: 86vw !important;
+    height: 330px !important;
+    margin: 10px !important;
+  }
+  .flip-card-front img {
+    width: 70px !important;
+  }
+  .flip-card-front h3 {
+    font-size: 1.28rem;
+  }
+  .flip-card-front div, .flip-card-back {
+    font-size: 1rem;
+  }
+}
+
+/* Sponsors Cards Responsive */
+@media (max-width: 700px) {
+  .sponsor-card-list {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+  }
+  .sponsor-card {
+    width: 89vw !important;
+    min-width: 0 !important;
+    font-size: 0.98rem !important;
+  }
+  .sponsor-logo {
+    width: 56px !important;
+  }
+}
