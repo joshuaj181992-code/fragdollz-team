@@ -1,0 +1,158 @@
+body {
+  background: linear-gradient(120deg, #18072f 0%, #311e59 100%);
+  color: #f8eaff;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.esports-bg {
+  background: linear-gradient(120deg, #18072f 0%, #311e59 100%);
+  min-height: 100vh;
+  color: #f8eaff;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  padding-bottom: 40px;
+}
+
+.esports-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border: 4px solid #fc41b8;
+  margin-bottom: 22px;
+  margin-top: 16px;
+  box-shadow: 0 0 58px #cdbeffb1, 0 0 4px #231138;
+  background: #210f31;
+}
+
+.esports-title {
+  font-size: 3rem;
+  color: #fc41b8;
+  text-shadow: 0 4px 26px #f287ea, 1px 1px 0 #340564;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  margin: 0 0 6px 0;
+}
+
+.esports-tagline {
+  color: #fff1fb;
+  font-size: 1.25rem;
+  margin-top: 10px;
+  font-weight: 600;
+  text-shadow: 0 3px 18px #930ec3;
+}
+.esports-tagline span { color: #fc41b8; }
+
+.frag-hashtag {
+  background: rgba(250,10,187,0.09);
+  padding: 8px 25px;
+  border-radius: 24px;
+  letter-spacing: 1.6px;
+  color: #fc41b8;
+  font-weight: bold;
+  margin-top: 36px;
+  text-shadow: 0 2px 8px #fc4ace88;
+}
+
+.esports-roster {
+  display: flex;
+  gap: 38px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+/* Player Card Styles */
+.player-card {
+  background: linear-gradient(120deg, #2a0f44 60%, #5adaffb8 100%);
+  border: 3px solid #fc41b8;
+  border-radius: 28px;
+  box-shadow: 0 4px 38px #5adaff77, 0 2px 18px #231138bb;
+  padding: 38px 20px 18px 20px;
+  text-align: center;
+  width: 230px;
+  margin: 15px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.17s cubic-bezier(.37,2,.61,-0.56), box-shadow 0.15s;
+  overflow: visible;
+}
+
+.player-card:hover {
+  transform: translateY(-10px) scale(1.045);
+  box-shadow: 0 12px 40px #5adaffb7, 0 2px 18px #fc41b8b5;
+  z-index: 3;
+}
+
+.player-avatar-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+.player-avatar-bg {
+  position: absolute;
+  top: 12px; left: 50%; transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fc41b8 4%, #5adaff33 90%);
+  filter: blur(24px) opacity(0.81);
+  z-index: 0;
+  pointer-events: none;
+}
+.player-card img {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #5adaff;
+  background-color: #341b47;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 18px #fc41b898;
+}
+
+.player-card h3 {
+  margin: 0;
+  color: #fc41b8;
+  font-size: 1.26rem;
+  text-shadow: 0 2px 12px #5adaff88;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+}
+.player-handle {
+  font-size: 1.13rem;
+  color: #f6f2fa;
+  font-family: inherit;
+  opacity: .80;
+  margin: 2px 0 8px 0;
+  letter-spacing: 1.1px;
+  font-weight: bold;
+}
+.player-role {
+  color: #5adaff;
+  background: #231139cc;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 5px 18px;
+  margin-bottom: 4px;
+  font-size: 1.01rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 5px #fc41b882;
+}
+
+.player-socials {
+  margin-top: 11px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.player-socials a {
+  color: #fc41b8;
+  font-size: 1.38rem;
+  transition: color 0.12s, transform 0.12s;
+  text-shadow: 0 1px 4px #5adaff55;
+}
+.player-socials a:hover {
+  color: #5adaff;
+  transform: scale(1.22);
+}

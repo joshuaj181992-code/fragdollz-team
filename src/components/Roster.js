@@ -1,3 +1,4 @@
+import "./esports-theme.css";
 import React from "react";
 const players = [
   { name: "Hexa", role: "Captain", img: "/images/fd2.png", bio: "GL, entry aimer, fearless in clutch." },
@@ -6,49 +7,63 @@ const players = [
   { name: "Echo", role: "Entry", img: "/images/fd2.png", bio: "Point-break plays, unpredictable moves." }
 ];
 
+
 export default function Roster() {
+  const players = [
+    {
+      name: "GamerBelle",
+      handle: "@gamerbelle",
+      role: "Captain",
+      img: "/images/teammate1.png",
+      socials: {
+        twitch: "https://twitch.tv/gamerbelle",
+        twitter: "https://twitter.com/gamerbelle",
+        instagram: "https://instagram.com/gamerbelle"
+      },
+      quote: "Bringing the heat and the hype!"
+    },
+    {
+      name: "SnipaQueen",
+      handle: "@snipaqueen",
+      role: "Sniper",
+      img: "/images/teammate2.png",
+      socials: {
+        twitch: "https://twitch.tv/snipaqueen",
+        twitter: "https://twitter.com/snipaqueen",
+        instagram: "https://instagram.com/snipaqueen"
+      },
+      quote: "No scope, all style."
+    }
+    // Add more teammates here!
+  ];
+
   return (
-    <div style={{
-      minHeight: "80vh", padding: "2.5em 0 2em 0",
-      display: "flex", flexDirection: "column", alignItems: "center"
-    }}>
-      <h2 style={{
-        color: "var(--accent)", fontFamily: "Orbitron,Arial,sans-serif", fontSize: 34, letterSpacing: ".11em"
-      }}>Team Roster</h2>
-      <div style={{
-        display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 38, marginTop: 24, width: "100%"
-      }}>
-        {players.map((p) => (
-          <div key={p.name}
-            style={{
-              background: "var(--card-bg)",
-              border: "3px solid var(--card-border)",
-              borderRadius: 18, width: 210, minHeight: 330,
-              boxShadow: "var(--shadow)", marginBottom: 26, textAlign: "center", padding: "22px 12px 14px 12px",
-              position: "relative", transition: "transform .22s"
-            }}
-            className="float"
-          >
-            <img src={p.img} alt={p.name}
-              style={{
-                borderRadius: "52%",
-                border: "3px solid var(--primary)",
-                width: 94, height: 94, marginBottom: 10, objectFit: "cover"
-              }}
-            />
-            <div style={{ fontSize: 21, fontWeight: "bold", color: "var(--primary)", marginBottom: 2 }}>{p.name}</div>
-            <div style={{ color: "var(--highlight)", fontSize: 15, fontWeight: 600, marginBottom: 7 }}>{p.role}</div>
-            <p style={{
-              color: "var(--accent)",
-              minHeight: 32, fontSize: 14,
-              marginBottom: 5
-            }}>{p.bio}</p>
-            <i className="fas fa-gamepad" style={{
-              color: "var(--primary)", fontSize: 26, position: "absolute", right: 15, bottom: 15, opacity: .5
-            }} />
+    <div className="esports-roster">
+      {players.map((player, idx) => (
+        <div className="player-card" key={idx}>
+          <div className="player-avatar-wrapper">
+            <span className="player-avatar-bg"></span>
+            <img src={player.img} alt={player.name} />
           </div>
-        ))}
-      </div>
+          <h3>{player.name}</h3>
+          <div className="player-handle">{player.handle}</div>
+          <div className="player-role">{player.role}</div>
+          <div style={{margin:"8px 0 0 0", color:"#dadada"}}>
+            {player.quote}
+          </div>
+          <div className="player-socials">
+            <a href={player.socials.twitch} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-twitch"></i>
+            </a>
+            <a href={player.socials.twitter} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-twitter"></i>
+            </a>
+            <a href={player.socials.instagram} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
