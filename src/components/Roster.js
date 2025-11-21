@@ -1,49 +1,42 @@
 import "./esports-theme.css";
 import React from "react";
+
 const players = [
-  { name: "Hexa", role: "Captain", img: "/images/fd2.png", bio: "GL, entry aimer, fearless in clutch." },
-  { name: "Nova", role: "Sniper", img: "/images/fd2.png", bio: "Scope queen with lightning reflexes." },
-  { name: "Byte", role: "Support", img: "/images/fd2.png", bio: "Brains, strats, and big vibes." },
-  { name: "Echo", role: "Entry", img: "/images/fd2.png", bio: "Point-break plays, unpredictable moves." }
+  {
+    name: "GamerBelle",
+    handle: "@gamerbelle",
+    role: "Captain",
+    img: "/images/teammate1.png",
+    socials: {
+      twitch: "https://twitch.tv/gamerbelle",
+      twitter: "https://twitter.com/gamerbelle",
+      instagram: "https://instagram.com/gamerbelle"
+    },
+    quote: "Bringing the heat and the hype!"
+  },
+  {
+    name: "SnipaQueen",
+    handle: "@snipaqueen",
+    role: "Sniper",
+    img: "/images/teammate2.png",
+    socials: {
+      twitch: "https://twitch.tv/snipaqueen",
+      twitter: "https://twitter.com/snipaqueen",
+      instagram: "https://instagram.com/snipaqueen"
+    },
+    quote: "No scope, all style."
+  }
+  // Add more teammates here using the same format!
 ];
 
-
 export default function Roster() {
-  const players = [
-    {
-      name: "GamerBelle",
-      handle: "@gamerbelle",
-      role: "Captain",
-      img: "/images/teammate1.png",
-      socials: {
-        twitch: "https://twitch.tv/gamerbelle",
-        twitter: "https://twitter.com/gamerbelle",
-        instagram: "https://instagram.com/gamerbelle"
-      },
-      quote: "Bringing the heat and the hype!"
-    },
-    {
-      name: "SnipaQueen",
-      handle: "@snipaqueen",
-      role: "Sniper",
-      img: "/images/teammate2.png",
-      socials: {
-        twitch: "https://twitch.tv/snipaqueen",
-        twitter: "https://twitter.com/snipaqueen",
-        instagram: "https://instagram.com/snipaqueen"
-      },
-      quote: "No scope, all style."
-    }
-    // Add more teammates here!
-  ];
-
   return (
     <div className="esports-roster">
       {players.map((player, idx) => (
         <div className="player-card" key={idx}>
           <div className="player-avatar-wrapper">
             <span className="player-avatar-bg"></span>
-            <img src={player.img} alt={player.name} />
+            <img src={player.img} alt={player.name} className="player-avatar-img"/>
           </div>
           <h3>{player.name}</h3>
           <div className="player-handle">{player.handle}</div>
