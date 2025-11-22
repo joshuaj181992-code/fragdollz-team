@@ -14,7 +14,11 @@ export default function Home() {
       overflow: "hidden"
     }}>
    
-
+<div className="empower-banner">
+  <span>Leveling Up Women in Gaming</span>
+  <span>Girls Can Game Harder</span>
+  <span>Built by Babes Who Frag</span>
+</div>
       {/* Animated Cyber BG overlays */}
       <div className="hero-cyber-bg hero-cyber-bg-1" />
       <div className="hero-cyber-bg hero-cyber-bg-2" />
