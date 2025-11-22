@@ -28,7 +28,7 @@ const sponsors = [
   },
   {
   name: "DSS",
-    img: "/images/sp6.png",
+    img: "/images/sp7.png",
   url: "https://www.tiktok.com/@dragonshellshinobi?_r=1&_t=ZP-91b9cC5sXtf", // <-- put the real DSS link here
   tagline: "Dragon Shield Shinbo"
 }
