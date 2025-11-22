@@ -26,6 +26,12 @@ const sponsors = [
     url: "https://powerbyte.io",
     tagline: "Performance PCs for Pros"
   }
+    {
+    name: "Battle of the Orgs",
+    img: "/images/Untitled-6.png",
+    url: "",
+    tagline: "Performance PCs for Pros"
+  }
 ];
 
 export default function Sponsored() {
