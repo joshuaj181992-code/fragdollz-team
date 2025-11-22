@@ -27,8 +27,8 @@ const sponsors = [
     tagline: "Performance PCs for Pros"
   },
     {
-    name: "Battle of the Orgs",
-    img: "/images/Untitled-6.png",
+    name: "DSS",
+    img: "/images/sp5.png",
     url: "",
     tagline: "Performance PCs for Pros"
   }
