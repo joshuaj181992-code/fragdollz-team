@@ -20,15 +20,21 @@ const sponsors = [
     url: "https://powerbyte.io",
     tagline: "Performance PCs for Pros"
   },
+  {
+  name: "DSS",
+    img: "/images/sp10.png",
+  url: "https://www.tiktok.com/@dragonshellshinobi?_r=1&_t=ZP-91b9cC5sXtf", // <-- put the real DSS link here
+  tagline: "Dragon Shield Shinbo"
+},
    {
     name: "Battle of the Orgs",
     img: "/images/sp4.png",
     url: "https://powerbyte.io",
     tagline: "Performance PCs for Pros"
-  },
+  }
   {
   name: "DSS",
-    img: "/images/sp7.png",
+    img: "/images/sp10.png",
   url: "https://www.tiktok.com/@dragonshellshinobi?_r=1&_t=ZP-91b9cC5sXtf", // <-- put the real DSS link here
   tagline: "Dragon Shield Shinbo"
 }
