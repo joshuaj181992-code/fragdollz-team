@@ -31,7 +31,7 @@ const sponsors = [
     img: "/images/sp4.png",
     url: "https://powerbyte.io",
     tagline: "Performance PCs for Pros"
-  }
+  },
   {
   name: "DSS",
     img: "/images/sp10.png",
