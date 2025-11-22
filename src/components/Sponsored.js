@@ -28,7 +28,7 @@ const sponsors = [
   },
   {
   name: "DSS",
-  img: "/images/sp5.png",
+  img: "/images/Untitled-6.png",
   url: "https://www.tiktok.com/@dragonshellshinobi?_r=1&_t=ZP-91b9cC5sXtf", // <-- put the real DSS link here
   tagline: "Performance PCs for Pros"
 }
