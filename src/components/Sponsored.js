@@ -5,7 +5,7 @@ const sponsors = [
   {
     name: "Name Less",
     img: "/images/sp1.png",
-    url: "https://gamefuel.com",
+    url: "https://namelessesports.com/",
     tagline: "Fueling Champions Everywhere!"
   },
   {
@@ -17,7 +17,7 @@ const sponsors = [
   {
     name: "Chariety Gamers",
     img: "/images/sp3.png",
-    url: "https://powerbyte.io",
+    url: "https://www.charitygamer.org/",
     tagline: "Performance PCs for Pros"
   },
   {
@@ -29,15 +29,9 @@ const sponsors = [
    {
     name: "Battle of the Orgs",
     img: "/images/sp4.png",
-    url: "https://powerbyte.io",
+    url: "https://battle-of-the-orgs.vercel.app/",
     tagline: "Performance PCs for Pros"
-  },
-  {
-  name: "DSS",
-    img: "/images/sp10.png",
-  url: "https://www.tiktok.com/@dragonshellshinobi?_r=1&_t=ZP-91b9cC5sXtf", // <-- put the real DSS link here
-  tagline: "Dragon Shield Shinbo"
-}
+  }
   
 ];
 
