@@ -1516,4 +1516,27 @@ body, .esports-bg {
 
   /* reduce heavy overlay visuals so they don’t push content */
   .hero-cyber-bg-1, .hero-cyber-bg-2, .hero-pixel-overlay { opacity: 0.12 !important; transform: none !important; }
+}/* Kick social button style - add at the end of esports-theme.css */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  margin-right: 8px;
+  background: rgba(0,0,0,0.35);
+  font-weight: 700;
+}
+
+.social-btn.social-kick {
+  background: linear-gradient(135deg, #ff6a00 0%, #ff2d95 100%);
+  color: #fff;
+}
+
+/* mobile slightly larger */
+@media (max-width: 900px) {
+  .social-btn { width: 48px; height: 48px; }
 }
