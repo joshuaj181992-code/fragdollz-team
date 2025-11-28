@@ -49,7 +49,7 @@ const players = [
       twitch: "https://twitch.tv/gamerbelle",
       x: "https://x.com/gamerbelle",
       instagram: "https://instagram.com/gamerbelle"
-      // add kick if available: kick: "https://kick.com/..."
+      // add kick: "https://kick.com/USERNAME" if available
     },
     quote: "Bringing the heat and the hype!"
   },
@@ -71,6 +71,7 @@ export default function Roster() {
             key={idx}
             onClick={() => flipCard(idx)}
             tabIndex={0}
+            role="button"
           >
             <div className="flip-card-inner">
               <div className="flip-card-front">
@@ -86,4 +87,86 @@ export default function Roster() {
                   "{player.quote}"
                 </div>
 
+                <div style={{margin: "7px 0", color: "#fff"}}>
+                  <b>Connect:</b><br />
+                  {/* Twitch */}
+                  {socials.twitch && (
+                    <a
+                      href={socials.twitch}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{marginRight: "14px", color: "#a991e1", textDecoration: "none"}}
+                      onClick={(e) => e.stopPropagation()}
+                      title="Open Twitch profile"
+                    >
+                      <i className="fa-brands fa-twitch" style={{marginRight:8}} /> Twitch
+                    </a>
+                  )}
 
+                  {/* X / Twitter */}
+                  {socials.x && (
+                    <a
+                      href={socials.x}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{marginRight: "14px", color: "#5daaff", textDecoration: "none"}}
+                      onClick={(e) => e.stopPropagation()}
+                      title="Open X profile"
+                    >
+                      <i className="fa-brands fa-x-twitter" style={{marginRight:8}} /> X
+                    </a>
+                  )}
+
+                  {/* Instagram */}
+                  {socials.instagram && (
+                    <a
+                      href={socials.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{marginRight: "14px", color: "#ff66b2", textDecoration: "none"}}
+                      onClick={(e) => e.stopPropagation()}
+                      title="Open Instagram profile"
+                    >
+                      <i className="fa-brands fa-instagram" style={{marginRight:8}} /> Instagram
+                    </a>
+                  )}
+
+                  {/* Kick */}
+                  {socials.kick && (
+                    <a
+                      href={socials.kick}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        marginRight: "14px",
+                        color: "#fff",
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 8,
+                        padding: "6px 10px",
+                        borderRadius: 8,
+                        background: "linear-gradient(135deg,#ff6a00 0%,#ff2d95 100%)"
+                      }}
+                      onClick={(e) => e.stopPropagation()}
+                      title="Open Kick profile"
+                    >
+                      {/* Inline Kick logo (simple K icon) */}
+                      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style={{flexShrink:0}}>
+                        <circle cx="12" cy="12" r="11" fill="#fff" opacity="0.08"/>
+                        <path d="M7 17V7h3.5l2.5 5 2.5-5H19v10h-3.5l-2.5-5-2.5 5H7z" fill="#fff"/>
+                      </svg>
+                      Kick
+                    </a>
+                  )}
+                </div>
+
+                <div style={{fontSize:"0.78rem", color:"#ccc", marginTop:"12px"}}>(Click to flip back)</div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

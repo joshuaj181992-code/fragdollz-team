@@ -1539,4 +1539,33 @@ body, .esports-bg {
 /* mobile slightly larger */
 @media (max-width: 900px) {
   .social-btn { width: 48px; height: 48px; }
+}/* Add at end of esports-theme.css — styling for social links (Kick included) */
+.flip-card-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
+
+.flip-card-back a:hover,
+.flip-card-back a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+}
+
+/* If you want a uniform small icon-only style, you can also add this:
+.social-icon {
+  width: 28px;
+  height: 28px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  margin-right:8px;
+}
+*/
