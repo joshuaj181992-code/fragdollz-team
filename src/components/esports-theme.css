@@ -1230,4 +1230,92 @@ body, .esports-bg {
   .hero-logo { width: clamp(96px, 36vw, 200px) !important; }
   .esports-title { font-size: clamp(18px, 12vw, 28px) !important; }
   .hero-cta-btn { font-size: 15px !important; padding: 10px 18px !important; }
+}/* ===== MOBILE: spread hero vertically for portrait phones =====
+   Paste this at the end of esports-theme.css to replace earlier mobile hero rules.
+   Adjust --nav-height if your nav is taller/shorter. */
+
+:root {
+  --nav-height: 64px; /* adjust this if your header/nav is different */
+}
+
+/* Only apply stacked vertical spacing on narrow screens (portrait) */
+@media (max-width: 720px) {
+  .hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* distribute items across full height */
+    align-items: center !important;
+    min-height: calc(100vh - var(--nav-height)) !important; /* fill viewport minus nav */
+    padding: 3.5vh 14px 3.5vh 14px !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  /* Make sure each piece sits in the expected area and doesn't collapse */
+  .hero-logo-wrap {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    align-self: center !important;
+  }
+  .hero-logo {
+    width: clamp(120px, 34vw, 300px) !important;
+    margin: 0 auto !important;
+  }
+
+  /* Place title below logo and keep it visually centered in its slot */
+  .esports-title {
+    margin: 0 !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    text-align: center !important;
+  }
+  .esports-subtitle {
+    margin: 0 !important;
+    padding-bottom: 6px !important;
+    text-align: center !important;
+  }
+
+  /* Keep CTA centered and near the middle area */
+  .hero-cta-btn {
+    align-self: center !important;
+    margin: 6px 0 !important;
+    padding: 12px 26px !important;
+    max-width: 92vw !important;
+  }
+
+  /* Socials sit below CTA */
+  .hero-socials {
+    margin: 6px 0 8px 0 !important;
+    gap: 12px !important;
+    align-self: center !important;
+  }
+
+  /* News widget anchored near the bottom */
+  .esports-news-widget, .news-widget {
+    align-self: center !important;
+    margin: 8px 0 4px 0 !important;
+    width: min(94%, 420px) !important;
+    max-height: 220px !important;
+    overflow: hidden !important;
+  }
+
+  /* Optional: if you want a tiny extra spacer above the news widget */
+  .hero-inner .hero-bottom-spacer {
+    height: 8px;
+    width: 100%;
+  }
+}
+
+/* If you prefer more breathing room for very short phones */
+@media (max-width: 380px) {
+  .hero-inner {
+    padding-top: 3vh !important;
+    padding-bottom: 3vh !important;
+    gap: 8px !important;
+    min-height: calc(95vh - var(--nav-height)) !important;
+  }
+  .hero-logo { width: clamp(96px, 38vw, 200px) !important; }
+  .esports-title { font-size: clamp(16px, 10vw, 28px) !important; }
 }
