@@ -1475,7 +1475,7 @@ body, .esports-bg {
   /* if you want the CTA slightly higher/lower, change justify-content: space-evenly to space-around or center */
 }
 /* MOBILE: make hero larger, centered and fill the viewport */
-:root { --nav-height: 68px; } /* adjust if your header is taller */
+:root { --nav-height: 80px; } /* adjust if your header is taller */
 
 @media (max-width: 900px) {
   .hero-inner {
@@ -1485,9 +1485,9 @@ body, .esports-bg {
     align-items: center !important;
     min-height: calc(100vh - var(--nav-height)) !important;
     width: 100% !important;
-    max-width: 600px !important;
+    max-width: 800px !important;
     margin: 0 auto !important;
-    padding: 4vh 16px !important;
+    padding: 4vh 12px !important;
     gap: 18px !important;
     box-sizing: border-box !important;
     overflow: visible !important;
