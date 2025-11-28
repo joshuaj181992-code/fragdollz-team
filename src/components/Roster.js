@@ -4,7 +4,7 @@ import "./esports-theme.css";
 const players = [
   {
     name: "JENNDOTEXE",
-    handle: "@JENNDOTEXT",
+    handle: "@JENNDOTEXE",
     role: "Captain",
     img: "/images/jenn.png",
     socials: {
