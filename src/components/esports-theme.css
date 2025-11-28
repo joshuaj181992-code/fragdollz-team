@@ -1474,3 +1474,46 @@ body, .esports-bg {
 
   /* if you want the CTA slightly higher/lower, change justify-content: space-evenly to space-around or center */
 }
+/* MOBILE: make hero larger, centered and fill the viewport */
+:root { --nav-height: 68px; } /* adjust if your header is taller */
+
+@media (max-width: 900px) {
+  .hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    min-height: calc(100vh - var(--nav-height)) !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 4vh 16px !important;
+    gap: 18px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .hero-logo {
+    width: clamp(140px, 36vw, 320px) !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .hero-head { text-align: center !important; display: block !important; }
+  .esports-title { font-size: clamp(22px, 9.5vw, 44px) !important; margin: 0 !important; }
+  .esports-subtitle { font-size: clamp(12px, 4.6vw, 16px) !important; margin: 0 !important; opacity: .95 !important; }
+
+  .hero-cta-btn {
+    width: min(92%, 420px) !important;
+    padding: 12px 20px !important;
+    font-size: clamp(16px, 4.6vw, 20px) !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+  }
+
+  .hero-socials { display:flex !important; justify-content:center !important; gap:10px !important; margin: 6px 0 !important; }
+  .esports-news-widget, .news-widget { width: min(94%, 420px) !important; margin: 6px auto 0 auto !important; }
+
+  /* reduce heavy overlay visuals so they don’t push content */
+  .hero-cyber-bg-1, .hero-cyber-bg-2, .hero-pixel-overlay { opacity: 0.12 !important; transform: none !important; }
+}
