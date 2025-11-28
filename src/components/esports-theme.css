@@ -1318,4 +1318,94 @@ body, .esports-bg {
   }
   .hero-logo { width: clamp(96px, 38vw, 200px) !important; }
   .esports-title { font-size: clamp(16px, 10vw, 28px) !important; }
+}/* ===== MOBILE PORTRAIT: HERO FULLSCREEN / ENLARGED (append at the end) ===== */
+
+/* adjust this if your nav is taller */
+:root { --nav-height: 64px; }
+
+/* general safety: cancel previous translate/overflow mistakes */
+.hero-inner { transform: none !important; overflow: visible !important; }
+
+/* Portrait phones: make hero fill most of the viewport and distribute content */
+@media (max-width: 720px) {
+  .hero-inner {
+    min-height: calc(100vh - var(--nav-height)) !important; /* fill screen area */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important; /* spread items vertically across the area */
+    align-items: center !important;
+    padding: 3.5vh 14px 3.5vh 14px !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make logo noticeably bigger on portrait mobile */
+  .hero-logo {
+    width: clamp(160px, 40vw, 360px) !important; /* larger, responsive */
+    height: auto !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 14px 38px rgba(92,17,102,0.48)) !important;
+  }
+
+  /* Slightly separate header group */
+  .hero-head { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+  .esports-title {
+    font-size: clamp(22px, 9.5vw, 44px) !important;
+    margin: 0 !important;
+    line-height: 1.02 !important;
+  }
+  .esports-subtitle {
+    font-size: clamp(12px, 4.8vw, 18px) !important;
+    margin: 0 !important;
+    opacity: 0.95;
+  }
+
+  /* Big CTA that fills width nicely */
+  .hero-cta-btn {
+    display: inline-block;
+    width: min(92%, 380px) !important;
+    text-align: center;
+    padding: 14px 24px !important;
+    font-size: clamp(16px, 4.6vw, 24px) !important;
+    border-radius: 14px !important;
+    margin: 6px 0 !important;
+  }
+
+  /* Social icons: touch friendly and centered */
+  .hero-socials {
+    display: flex !important;
+    gap: 12px !important;
+    margin: 6px 0 0 0 !important;
+  }
+  .hero-social-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+  }
+
+  /* bottom spacer gives room between socials and widget — keeps content distributed */
+  .hero-bottom-spacer { height: 6vh; width: 100%; }
+
+  /* News widget sits near the bottom and is not huge */
+  .esports-news-widget, .news-widget {
+    width: min(94%, 420px) !important;
+    max-height: 220px !important;
+    margin: 6px auto !important;
+    overflow: hidden !important;
+  }
+
+  /* tone down top overlays so they don't visually push content off center */
+  .hero-cyber-bg-1 { opacity: 0.18; transform: translateY(-2vh); }
+  .hero-cyber-bg-2 { opacity: 0.12; transform: translateY(-1vh); }
+  .hero-pixel-overlay { opacity: 0.08; transform: translateY(-0.5vh); }
+}
+
+/* Very small phones: make the same layout but slightly smaller elements */
+@media (max-width: 380px) {
+  .hero-inner { padding: 3vh 10px 3vh 10px !important; min-height: calc(100vh - var(--nav-height)) !important; }
+  .hero-logo { width: clamp(110px, 42vw, 220px) !important; }
+  .esports-title { font-size: clamp(18px, 11vw, 32px) !important; }
+  .hero-cta-btn { font-size: 16px !important; padding: 10px 18px !important; }
+  .hero-bottom-spacer { height: 5vh !important; }
 }
