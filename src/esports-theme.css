@@ -59,3 +59,39 @@
   margin-top: 36px;
   text-shadow: 0 2px 8px #fc4ace88;
 }
+/* MOBILE: hero fills portrait viewport and spreads content */
+:root { --nav-height: 64px; } /* change if your header is taller */
+
+@media (max-width: 900px) {
+  .hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    min-height: calc(100vh - var(--nav-height)) !important;
+    padding: 3.5vh 14px !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .hero-logo {
+    width: clamp(140px, 36vw, 360px) !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-head { display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .esports-title { font-size: clamp(20px, 8.5vw, 44px) !important; margin: 0 !important; text-align:center; }
+  .esports-subtitle { font-size: clamp(12px, 4.6vw, 16px) !important; margin: 0 !important; text-align:center; opacity: .95; }
+
+  .hero-cta-btn { width: min(94%, 420px) !important; padding: 12px 20px !important; font-size: clamp(16px, 4.6vw, 22px) !important; border-radius: 14px !important; }
+  .hero-socials { gap: 12px !important; margin: 6px 0 !important; display:flex; justify-content:center; }
+  .hero-social-btn { width: 48px !important; height: 48px !important; font-size: 20px !important; }
+
+  .esports-news-widget, .news-widget { width: min(94%, 420px) !important; max-height: 220px !important; overflow: hidden !important; margin: 6px auto !important; }
+
+  nav, header, .site-header, .topbar, .nav { padding: 10px 0 !important; }
+  .hero-cyber-bg-1, .hero-cyber-bg-2, .hero-pixel-overlay { opacity: 0.12 !important; transform: none !important; }
+}
