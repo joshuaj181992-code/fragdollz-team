@@ -13,7 +13,6 @@ export default function Home() {
         <div className="hero-logo-wrap">
           <img
             src="/images/logooo.svg"
-            alt="FragDollz Mascot"
             className="hero-logo"
             onError={(e) => {
               // If /images/logooo.png fails, try /logo192.png (CRA default). If that fails, use placeholder.
