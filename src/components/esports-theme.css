@@ -722,3 +722,95 @@ body,
   .hero-socials { gap: 17px !important; }
   .hero-social-btn { font-size: 2rem !important; width: 45px !important; height: 45px !important;}
 }
+/* Bigger centered hero logo with responsive sizes */
+.hero-logo {
+  display: block;
+  margin: 8px auto 18px auto;
+  width: 140px;            /* desktop / large screens */
+  height: auto;
+  max-width: 30%;
+  filter: drop-shadow(0 6px 18px rgba(92, 17, 102, 0.55));
+  transition: width 180ms ease, transform 180ms ease;
+  z-index: 5;
+}
+
+/* optional small scale on hover for a little life */
+.hero-logo:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* stronger glow behind the logo to match the neon hero */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 6px auto 12px auto;
+  padding: 8px;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.06), transparent 40%);
+  box-shadow: 0 8px 28px rgba(92, 17, 102, 0.20), inset 0 0 28px rgba(252, 65, 184, 0.03);
+}
+
+/* Mobile sizing */
+@media (max-width: 720px) {
+  .hero-logo {
+    width: 96px;           /* mobile size */
+    max-width: 36%;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+  .hero-logo-wrap { padding: 6px; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .hero-logo { width: 82px; max-width: 42%; }
+}
+/* Force bigger responsive hero logo */
+.hero-logo {
+  width: clamp(220px, 20vw, 520px) !important; /* desktop larger, mobile smaller */
+  height: auto !important;
+  max-width: none !important;
+  display: block !important;
+  margin: 8px auto 18px auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 8px 36px rgba(92,17,102,0.55)) !important;
+  transition: transform .18s ease, width .18s ease !important;
+  z-index: 6 !important;
+}
+
+/* Soft glowing backdrop */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 6px auto 12px auto;
+  padding: 8px;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.06), transparent 40%);
+  box-shadow: 0 8px 28px rgba(92, 17, 102, 0.20), inset 0 0 28px rgba(252, 65, 184, 0.03);
+  z-index: 5;
+}
+
+/* Desktop extra boost (optional) */
+@media (min-width: 1400px) {
+  .hero-logo { width: clamp(320px, 18vw, 680px) !important; }
+}
+
+/* Mobile tuning */
+@media (max-width: 720px) {
+  .hero-logo { width: clamp(96px, 28vw, 180px) !important; }
+  .hero-logo-wrap { padding: 6px; }
+}/* DEBUG: force large logo */
+.hero-logo {
+  width: 420px !important;
+  max-width: 92% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 6px auto 18px auto !important;
+  z-index: 9999 !important;
+  outline: 3px solid rgba(0,255,0,0.45) !important; /* remove later */
+}
+
+/* mobile fallback */
+@media (max-width:720px){
+  .hero-logo { width: 180px !important; max-width: 86% !important; }
+}

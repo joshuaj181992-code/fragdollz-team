@@ -13,25 +13,19 @@ export default function Home() {
       justifyContent: "center",
       overflow: "hidden"
     }}>
-   
-
       {/* Animated Cyber BG overlays */}
       <div className="hero-cyber-bg hero-cyber-bg-1" />
       <div className="hero-cyber-bg hero-cyber-bg-2" />
       <div className="hero-pixel-overlay"></div>
 
-      {/* Main avatar/logo image */}
-      <img
-        src="/images/logooo.png"
-        alt="FragDollz Mascot"
-        style={{
-          width: "170px",
-          margin: "0 auto",
-          display: "block",
-          zIndex: 4,
-          position: "relative"
-        }}
-      />
+  <div className="hero-logo-wrap">
+  <img
+    src="/images/logooo.png"
+    alt="FragDollz Mascot"
+    className="hero-logo"
+    style={{ width: "420px", height: "auto", maxWidth: "92%" }}
+  />
+</div>
 
       <h1 className="esports-title" style={{zIndex: 5, marginBottom: 0}}>
         FragDollz
@@ -52,7 +46,7 @@ export default function Home() {
 
       {/* Animated CTA Button */}
       <a
-        href="https://twitch.tv/fragdollz" // update this to your channel/discord/etc
+        href="https://twitch.tv/fragdollz"
         className="hero-cta-btn"
         target="_blank"
         rel="noopener noreferrer"
