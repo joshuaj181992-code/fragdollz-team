@@ -22,7 +22,7 @@ export default function Home() {
 
       {/* Main avatar/logo image */}
       <img
-        src="/images/fd2.png"
+        src="/images/logooo.png"
         alt="FragDollz Mascot"
         style={{
           width: "170px",
