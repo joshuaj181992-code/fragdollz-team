@@ -9,7 +9,10 @@ const players = [
     img: "/images/jenn.png",
     socials: {
       twitch: "https://www.twitch.tv/jenndotexe",
-      Kick: "https://kick.com/jenndotexe"
+<a class="social-btn social-kick" href="https://kick.com/jenndotexe" target="_blank" rel="noopener noreferrer" aria-label="Kick">
+  <!-- simple text/letter icon - replace with SVG if you have one -->
+  K
+</a>
     },
     quote: "It is what it is!!"
   },
