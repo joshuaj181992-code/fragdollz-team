@@ -12,7 +12,7 @@ export default function Home() {
       <div className="hero-inner">
         <div className="hero-logo-wrap">
           <img
-            src="/images/logooo.png"
+            src="/images/logooo.svg"
             alt="FragDollz Mascot"
             className="hero-logo"
             onError={(e) => {
