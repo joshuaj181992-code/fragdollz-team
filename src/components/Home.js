@@ -20,12 +20,13 @@ export default function Home() {
 
       {/* Hero logo — NO inline width, CSS will control size */}
       <div className="hero-logo-wrap">
-        <img
-          src="/images/logooo.png"
-          alt="FragDollz Mascot"
-          className="hero-logo"
-        />
-      </div>
+     <div className="hero-logo-wrap">
+  <img
+    src="/images/logooo.svg"
+    alt="FragDollz Mascot"
+    className="hero-logo"
+  />
+</div>
 
       <h1 className="esports-title" style={{ zIndex: 5, marginBottom: 0 }}>
         FragDollz
