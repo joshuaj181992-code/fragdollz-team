@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./esports-theme.css";
-import { EsportsNewsWidget } from "./EsportsNewsWidget"; // If using this widget
+import { EsportsNewsWidget } from "./EsportsNewsWidget";
 
 export default function Home() {
   return (
@@ -18,16 +18,16 @@ export default function Home() {
       <div className="hero-cyber-bg hero-cyber-bg-2" />
       <div className="hero-pixel-overlay"></div>
 
-  <div className="hero-logo-wrap">
-  <img
-    src="/images/logooo.png"
-    alt="FragDollz Mascot"
-    className="hero-logo"
-    style={{ width: "420px", height: "auto", maxWidth: "92%" }}
-  />
-</div>
+      {/* Hero logo — NO inline width, CSS will control size */}
+      <div className="hero-logo-wrap">
+        <img
+          src="/images/logooo.png"
+          alt="FragDollz Mascot"
+          className="hero-logo"
+        />
+      </div>
 
-      <h1 className="esports-title" style={{zIndex: 5, marginBottom: 0}}>
+      <h1 className="esports-title" style={{ zIndex: 5, marginBottom: 0 }}>
         FragDollz
       </h1>
 
@@ -38,7 +38,8 @@ export default function Home() {
           color: "#fff",
           marginBottom: "13px",
           marginTop: "2px",
-          textShadow: "0 2px 12px #fc41b899"
+          textShadow: "0 2px 12px #fc41b899",
+          zIndex: 5
         }}
       >
         Next-gen Gamer Girl Power. Win the Crowd.
@@ -50,13 +51,13 @@ export default function Home() {
         className="hero-cta-btn"
         target="_blank"
         rel="noopener noreferrer"
-        style={{zIndex: 5}}
+        style={{ zIndex: 5 }}
       >
         WATCH US LIVE
       </a>
 
       {/* Social badges */}
-      <div className="hero-socials">
+      <div className="hero-socials" style={{ zIndex: 5 }}>
         <a href="https://twitch.tv/fragdollz" className="hero-social-btn" target="_blank" rel="noopener noreferrer" title="Twitch">
           <i className="fa-brands fa-twitch"></i>
         </a>
@@ -71,9 +72,8 @@ export default function Home() {
         </a>
       </div>
 
-      {/* Esports News Widget if you want it here */}
+      {/* Esports News Widget */}
       <EsportsNewsWidget />
-
     </div>
   );
 }

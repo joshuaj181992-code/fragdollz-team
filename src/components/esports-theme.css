@@ -814,3 +814,38 @@ body,
 @media (max-width:720px){
   .hero-logo { width: 180px !important; max-width: 86% !important; }
 }
+/* --- FORCED HERO LOGO SIZING — paste at end of file --- */
+
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 12px auto;
+  padding: 8px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.04), transparent 40%);
+  z-index: 6 !important;
+}
+
+/* Force a noticeably bigger responsive logo (overrides other rules) */
+.hero-logo {
+  width: clamp(280px, 22vw, 680px) !important;
+  max-width: 96% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 6px auto 18px auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 12px 44px rgba(92,17,102,0.55)) !important;
+  transition: transform .18s ease, width .18s ease !important;
+  z-index: 7 !important;
+}
+
+/* Desktop extra boost (very large screens) */
+@media (min-width: 1400px) {
+  .hero-logo { width: clamp(360px, 18vw, 900px) !important; }
+}
+
+/* Mobile tuning */
+@media (max-width: 720px) {
+  .hero-logo { width: clamp(120px, 30vw, 220px) !important; }
+  .hero-logo-wrap { padding: 6px !important; }
+}
