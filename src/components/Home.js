@@ -5,13 +5,13 @@ import { EsportsNewsWidget } from "./EsportsNewsWidget";
 export default function Home() {
   return (
     <div className="home-viewport">
-      {/* Animated Cyber BG overlays */}
+      {/* Background overlays */}
       <div className="hero-cyber-bg hero-cyber-bg-1" />
       <div className="hero-cyber-bg hero-cyber-bg-2" />
       <div className="hero-pixel-overlay"></div>
 
+      {/* Main content container */}
       <div className="hero-inner">
-        {/* Hero logo */}
         <div className="hero-logo-wrap">
           <img
             src="/images/logooo.png"
@@ -26,7 +26,6 @@ export default function Home() {
           Next-gen Gamer Girl Power. Win the Crowd.
         </div>
 
-        {/* Animated CTA Button */}
         <a
           href="https://twitch.tv/fragdollz"
           className="hero-cta-btn"
@@ -36,7 +35,6 @@ export default function Home() {
           WATCH US LIVE
         </a>
 
-        {/* Social badges */}
         <div className="hero-socials">
           <a href="https://twitch.tv/fragdollz" className="hero-social-btn" target="_blank" rel="noopener noreferrer" title="Twitch">
             <i className="fa-brands fa-twitch"></i>
@@ -52,7 +50,6 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Esports News Widget */}
         <EsportsNewsWidget />
       </div>
     </div>

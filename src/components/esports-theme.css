@@ -1,6 +1,892 @@
-/* --- Mobile-first hero layout improvements --- */
+body {
+  background: linear-gradient(120deg, #18072f 0%, #311e59 100%);
+  color: #f8eaff;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-/* viewport wrapper — keep backgrounds full height but allow content to start higher */
+.esports-bg {
+  background: linear-gradient(120deg, #18072f 0%, #311e59 100%);
+  min-height: 100vh;
+  color: #f8eaff;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  padding-bottom: 40px;
+}
+
+.esports-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border: 4px solid #fc41b8;
+  margin-bottom: 22px;
+  margin-top: 16px;
+  box-shadow: 0 0 58px #cdbeffb1, 0 0 4px #231138;
+  background: #210f31;
+}
+
+.esports-title {
+  font-size: 3rem;
+  color: #fc41b8;
+  text-shadow: 0 4px 26px #f287ea, 1px 1px 0 #340564;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  margin: 0 0 6px 0;
+}
+
+.esports-tagline {
+  color: #fff1fb;
+  font-size: 1.25rem;
+  margin-top: 10px;
+  font-weight: 600;
+  text-shadow: 0 3px 18px #930ec3;
+}
+.esports-tagline span { color: #fc41b8; }
+
+.frag-hashtag {
+  background: rgba(250,10,187,0.09);
+  padding: 8px 25px;
+  border-radius: 24px;
+  letter-spacing: 1.6px;
+  color: #fc41b8;
+  font-weight: bold;
+  margin-top: 36px;
+  text-shadow: 0 2px 8px #fc4ace88;
+}
+
+.esports-roster {
+  display: flex;
+  gap: 38px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+/* Player Card Styles */
+.player-card {
+  background: linear-gradient(120deg, #2a0f44 60%, #5adaffb8 100%);
+  border: 3px solid #fc41b8;
+  border-radius: 28px;
+  box-shadow: 0 4px 38px #5adaff77, 0 2px 18px #231138bb;
+  padding: 38px 20px 18px 20px;
+  text-align: center;
+  width: 230px;
+  margin: 15px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.17s cubic-bezier(.37,2,.61,-0.56), box-shadow 0.15s;
+  overflow: visible;
+}
+
+.player-card:hover {
+  transform: translateY(-10px) scale(1.045);
+  box-shadow: 0 12px 40px #5adaffb7, 0 2px 18px #fc41b8b5;
+  z-index: 3;
+}
+
+.player-avatar-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+.player-avatar-bg {
+  position: absolute;
+  top: 12px; left: 50%; transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fc41b8 4%, #5adaff33 90%);
+  filter: blur(24px) opacity(0.81);
+  z-index: 0;
+  pointer-events: none;
+}
+.player-card img {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #5adaff;
+  background-color: #341b47;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 18px #fc41b898;
+}
+
+.player-card h3 {
+  margin: 0;
+  color: #fc41b8;
+  font-size: 1.26rem;
+  text-shadow: 0 2px 12px #5adaff88;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+}
+.player-handle {
+  font-size: 1.13rem;
+  color: #f6f2fa;
+  font-family: inherit;
+  opacity: .80;
+  margin: 2px 0 8px 0;
+  letter-spacing: 1.1px;
+  font-weight: bold;
+}
+.player-role {
+  color: #5adaff;
+  background: #231139cc;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 5px 18px;
+  margin-bottom: 4px;
+  font-size: 1.01rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 5px #fc41b882;
+}
+
+.player-socials {
+  margin-top: 11px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.player-socials a {
+  color: #fc41b8;
+  font-size: 1.38rem;
+  transition: color 0.12s, transform 0.12s;
+  text-shadow: 0 1px 4px #5adaff55;
+}
+.player-socials a:hover {
+  color: #5adaff;
+  transform: scale(1.22);
+}
+.sponsor-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin: 36px 0 0 0;
+  padding: 0 12px;
+}
+
+.sponsor-card {
+  background: linear-gradient(130deg, #1c0832 50%, #361684 100%);
+  border: 3px solid #fc41b8;
+  border-radius: 26px;
+  box-shadow: 0 0 44px #5adaff92, 0 2px 14px #fc41b85e;
+  width: 240px;
+  min-height: 320px;
+  max-width: 90vw;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 18px 24px 18px;
+  transition: transform 0.15s, box-shadow 0.12s;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  cursor: pointer;
+}
+.sponsor-card:hover {
+  transform: scale(1.045) translateY(-8px);
+  box-shadow: 0 0 72px #5adaffff, 0 2px 20px #fc41b8b4;
+  z-index: 2;
+}
+.sponsor-logo-bg {
+  position: absolute;
+  top: 33px; left: 50%; transform: translateX(-50%);
+  width: 115px; height: 115px;
+  background: radial-gradient(circle, #fc41b8 15%, #5adaff44 90%);
+  border-radius: 50%;
+  filter: blur(27px) opacity(0.54);
+  z-index: 0;
+  pointer-events: none;
+}
+.sponsor-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  background: #130916;
+  border: 2px solid #5adaff;
+  box-shadow: 0 0 18px #fc41b858;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.sponsor-name {
+  margin-top: 7px;
+  color: #fc41b8;
+  font-weight: bold;
+  font-size: 1.22rem;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #5adaff78;
+}
+
+.sponsor-tagline {
+  margin-top: 8px;
+  color: #fceaff;
+  opacity: 0.90;
+  font-size: 1.07rem;
+  font-family: inherit;
+  text-shadow: 0 1px 7px #fc41b873;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  gap: 48px; /* Space between each link */
+  padding: 28px 0 24px 0; /* Top and bottom space */
+  background: #1c0832;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 0 12px #fc41b850;
+}
+
+nav a {
+  color: #fc41b8;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-size: 1.45rem;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 0.14s, text-shadow 0.14s;
+  text-shadow: 0 2px 7px #5adaff75;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: #5adaff;
+  border-bottom: 2px solid #5adaff;
+  text-shadow: 0 2px 18px #fff5;
+}
+body,
+.esports-bg {
+  padding-top: 90px; /* Adjust to match (or be a bit more than) nav height */
+}
+/* ---- HERO CALL-TO-ACTION BUTTON ---- */
+.hero-cta-btn {
+  display: inline-block;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #fc41b8, #5adaff);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 0 24px #fc41b8bb, 0 0 90px #5adaff33 inset;
+  padding: 20px 46px;
+  margin: 32px 0 16px 0;
+  cursor: pointer;
+  position: relative;
+  animation: cta-glow 1.7s infinite alternate;
+  letter-spacing: 1px;
+  transition: filter 0.20s;
+}
+.hero-cta-btn:hover {
+  filter: brightness(1.15) saturate(1.12);
+  animation: cta-glow-fast 0.4s 1;
+}
+@keyframes cta-glow {
+  from { box-shadow: 0 0 24px #fc41b8bb, 0 0 64px #5adaff44 inset;}
+  to { box-shadow: 0 0 48px #5adaff, 0 0 135px #fc41b833 inset;}
+}
+@keyframes cta-glow-fast {
+  from { box-shadow: 0 0 24px #fc41b8bb, 0 0 64px #5adaff44 inset;}
+  to { box-shadow: 0 0 80px #fc41b8cc, 0 0 180px #5adafff6 inset;}
+}
+
+/* ---- SOCIAL BADGES HERO ---- */
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 22px 0 0 0;
+}
+.hero-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.3rem;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#130813 50%,#2b0c39 100%);
+  box-shadow: 0 0 32px #fc41b899, 0 3px 16px #5adaff77;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.12s, box-shadow 0.11s, background 0.17s;
+  border: 2px solid #fc41b8;
+  position: relative;
+}
+.hero-social-btn:hover {
+  color: #5adaff;
+  background: linear-gradient(135deg,#282747 30%,#fc41b8 120%);
+  transform: scale(1.11) rotate(-3deg);
+  box-shadow: 0 0 52px #5adaffcc, 0 2px 26px #fc41b8b9;
+}
+.hero-social-btn i {
+  pointer-events: none;
+}
+
+/* ---- CYBER ANGLE BG OVERLAYS (for event vibes) ---- */
+.hero-cyber-bg {
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-cyber-bg-1, .hero-cyber-bg-2 {
+  position: absolute;
+  width: 76vw;
+  height: 24vw;
+  filter: blur(12px) opacity(0.12);
+  border-radius: 44vw;
+  z-index: 1;
+}
+.hero-cyber-bg-1 {
+  top: -70px;
+  left: -18vw;
+  background: linear-gradient(110deg, #fc41b8 0%, #5adaff 85%);
+  transform: rotate(-10deg);
+}
+.hero-cyber-bg-2 {
+  top: 100px;
+  right: -24vw;
+  background: linear-gradient(85deg, #5adaff 0%, #fc41b8ca 100%);
+  transform: rotate(6deg);
+}
+
+/* ---- PIXEL SPARKLE/GIRD MESH OVERLAY ---- */
+.hero-pixel-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 420px;
+  pointer-events: none;
+  opacity: 0.33;
+  background-image: 
+    linear-gradient(90deg, #fff2 1px, transparent 1px),
+    linear-gradient(180deg, #fff2 1px, transparent 1px);
+  background-size: 25px 25px;
+  z-index: 2;
+  mix-blend-mode: lighten;
+}
+/* Flip card container */
+.flip-card {
+  background: transparent;
+  width: 290px;
+  height: 370px;
+  perspective: 1000px;
+  margin: 18px;
+  display: inline-block;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #1c0832;
+  box-shadow: 0 0 10px #fc41b880, 0 0 32px #5adaff33;
+  border-radius: 26px;
+  overflow: hidden;
+  color: #fff;
+}
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 22px;
+  transform: rotateY(180deg);
+  background: #2b0c39;
+}
+.flip-card-back .badge {
+  font-size: 1rem;
+  background: #5adaff33;
+  padding: 4px 10px;
+  border-radius: 9px;
+  margin-right: 7px;
+  color: #5adaff;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.flip-card-back .fav-list {
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.empower-banner {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(90deg,#fc41b8,#5adaff40,#30143f 90%);
+  font-family: 'Orbitron',Arial,sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: #fff;
+  border-radius: 0 0 30px 30px;
+  padding: 18px 0 16px 0;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.empower-banner span {
+  display: inline-block;
+  animation: empower-cycle 6s infinite alternate;
+  opacity: 0;
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: 18px;
+  width: 90vw;
+  max-width: 750px;
+}
+.empower-banner span:nth-child(1) { animation-delay: 0s; }
+.empower-banner span:nth-child(2) { animation-delay: 2s; }
+.empower-banner span:nth-child(3) { animation-delay: 4s; }
+@keyframes empower-cycle {
+  0%   { opacity: 1; }
+  28%  { opacity: 1; }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+/* Mobile Nav & Body */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 0 10px 0;
+    font-size: 1rem;
+    min-height: 54px;
+  }
+  nav a {
+    font-size: 1.18rem;
+    letter-spacing: 1px;
+    padding: 4px 0 2px 0;
+  }
+  body, .esports-bg {
+    padding-top: 70px !important;
+    min-height: 100vh;
+  }
+}
+
+/* Responsive Hero Section */
+@media (max-width: 700px) {
+  .esports-title {
+    font-size: 2.3rem !important;
+    text-align: center;
+    margin-top: 14px;
+  }
+  .empower-banner {
+    font-size: 1rem;
+    padding: 12px 0 10px 0;
+  }
+  .hero-socials {
+    gap: 12px;
+  }
+  .hero-cta-btn {
+    font-size: 1.2rem;
+    padding: 14px 24px;
+    margin: 19px 0 9px 0;
+  }
+  .hero-cyber-bg-1, .hero-cyber-bg-2, .hero-pixel-overlay {
+    height: 160px;
+  }
+  .hero-cyber-bg-1, .hero-cyber-bg-2 {
+    width: 99vw;
+    min-width: 260px;
+    filter: blur(8px) opacity(0.14);
+    top: -14px;
+  }
+  .hero-cyber-bg-2 {
+    right: -10vw;
+    top: 55px;
+  }
+}
+
+/* Roster Cards Responsive */
+@media (max-width: 700px) {
+  .flip-card {
+    width: 86vw !important;
+    height: 330px !important;
+    margin: 10px !important;
+  }
+  .flip-card-front img {
+    width: 70px !important;
+  }
+  .flip-card-front h3 {
+    font-size: 1.28rem;
+  }
+  .flip-card-front div, .flip-card-back {
+    font-size: 1rem;
+  }
+}
+
+/* Sponsors Cards Responsive */
+@media (max-width: 700px) {
+  .sponsor-card-list {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+  }
+  .sponsor-card {
+    width: 89vw !important;
+    min-width: 0 !important;
+    font-size: 0.98rem !important;
+  }
+  .sponsor-logo {
+    width: 56px !important;
+  }
+}
+/* GENERAL MOBILE RESET */
+@media (max-width: 720px) {
+  body, .esports-bg {
+    padding-top: 60px !important;
+    min-height: 100vh;
+    font-size: 1rem !important;
+  }
+  nav, .navbar, .nav-bar-main {
+    flex-direction: column !important;
+    padding: 14px 0 7px 0 !important;
+    gap: 8px !important;
+    min-height: 44px !important;
+  }
+  nav a, .navbar a {
+    font-size: 1.13rem !important;
+    padding: 4px 0 !important;
+    letter-spacing: 2px !important;
+    display: block !important;
+    margin: 0 auto 2px auto !important;
+  }
+  .esports-title {
+    font-size: 2rem !important;
+    margin-bottom: 0 !important;
+    text-align: center !important;
+  }
+  .empower-banner {
+    font-size: 0.99rem !important;
+    padding: 10px 0 10px 0 !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-cta-btn {
+    font-size: 1.1rem !important;
+    padding: 12px 16px !important;
+    margin: 14px 0 8px 0 !important;
+    border-radius: 20px !important;
+    width: 95vw !important;
+    max-width: 320px !important;
+  }
+  .hero-socials {
+    gap: 10px !important;
+    margin: 8px 0 0 0 !important;
+  }
+  .hero-social-btn {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 1.7rem !important;
+    border-width: 1.5px !important;
+  }
+  .hero-cyber-bg-1, .hero-cyber-bg-2, .hero-pixel-overlay {
+    width: 100vw !important;
+    height: 120px !important;
+    filter: blur(7px) opacity(0.13) !important;
+    min-width: 180px !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+  .hero-cyber-bg-1 { top: -18px !important; left: -20vw !important;}
+  .hero-cyber-bg-2 { top: 76px !important; right: -8vw !important;}
+  .hero-pixel-overlay { height: 120px !important; }
+
+  /* Roster flip-cards */
+  .flip-card {
+    width: 96vw !important;
+    height: 230px !important;
+    margin: 12px 0 !important;
+    font-size: 1rem !important;
+  }
+  .flip-card-front img {
+    width: 60px !important;
+    margin: 13px 0 10px 0 !important;
+  }
+  .flip-card-front h3 {
+    font-size: 1.07rem !important;
+  }
+  .flip-card-back,
+  .flip-card-front div {
+    font-size: 0.97rem !important;
+  }
+
+  /* Sponsor cards */
+  .sponsor-card-list {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+  .sponsor-card {
+    width: 94vw !important;
+    min-width: 0 !important;
+    font-size: 0.95rem !important;
+    padding: 11px !important;
+    margin-bottom: 10px !important;
+  }
+  .sponsor-logo {
+    width: 40px !important;
+  }
+
+  /* News Widget */
+  .esports-news-widget,
+  .news-widget {
+    font-size: 0.97rem !important;
+    width: 96vw !important;
+    padding: 12px !important;
+    margin: 16px auto !important;
+  }
+
+  /* Card corners and box-shadows tighter for mobile */
+  .flip-card, .sponsor-card, .news-widget, .empower-banner {
+    border-radius: 12px !important;
+    box-shadow: 0 0 12px #fc41b866, 0 0 18px #5adaff27 !important;
+  }
+}
+
+/* Make images, text, cards not overflow screens on very tiny mobiles */
+@media (max-width: 400px) {
+  .flip-card, .sponsor-card, .news-widget {
+    width: 99vw !important;
+    padding: 7px !important;
+    font-size: 0.9rem !important;
+  }
+  .hero-cta-btn { padding: 8px 4px !important;}
+  .esports-title { font-size: 1.49rem !important;}
+}
+.empower-banner {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(90deg,#fc41b8,#5adaff40,#30143f 90%);
+  font-family: 'Orbitron',Arial,sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: 12px 0 10px 0;
+  margin-bottom: 24px;
+  position: relative;
+  min-height: 22px;
+}
+.empower-banner span {
+  display: inline-block;
+  animation: empower-cycle 6s infinite alternate;
+  opacity: 0;
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: 10px;
+  width: 96vw;
+  max-width: 600px;
+}
+.empower-banner span:nth-child(1) { animation-delay: 0s; }
+.empower-banner span:nth-child(2) { animation-delay: 2s; }
+.empower-banner span:nth-child(3) { animation-delay: 4s; }
+@keyframes empower-cycle {
+  0%   { opacity: 1; }
+  28%  { opacity: 1; }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@media (max-width: 700px) {
+  .esports-title, .empower-banner {
+    font-size: 1.23rem !important;
+    margin-top: 9px;
+  }
+  .featured-clip video, .featured-clip img, .news-widget, .upcoming-event {
+    max-width: 96vw !important;
+    font-size: 1.05rem !important;
+  }
+  .hero-socials { gap: 17px !important; }
+  .hero-social-btn { font-size: 2rem !important; width: 45px !important; height: 45px !important;}
+}
+/* Bigger centered hero logo with responsive sizes */
+.hero-logo {
+  display: block;
+  margin: 8px auto 18px auto;
+  width: 140px;            /* desktop / large screens */
+  height: auto;
+  max-width: 30%;
+  filter: drop-shadow(0 6px 18px rgba(92, 17, 102, 0.55));
+  transition: width 180ms ease, transform 180ms ease;
+  z-index: 5;
+}
+
+/* optional small scale on hover for a little life */
+.hero-logo:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* stronger glow behind the logo to match the neon hero */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 6px auto 12px auto;
+  padding: 8px;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.06), transparent 40%);
+  box-shadow: 0 8px 28px rgba(92, 17, 102, 0.20), inset 0 0 28px rgba(252, 65, 184, 0.03);
+}
+
+/* Mobile sizing */
+@media (max-width: 720px) {
+  .hero-logo {
+    width: 96px;           /* mobile size */
+    max-width: 36%;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+  .hero-logo-wrap { padding: 6px; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .hero-logo { width: 82px; max-width: 42%; }
+}
+/* Force bigger responsive hero logo */
+.hero-logo {
+  width: clamp(220px, 20vw, 520px) !important; /* desktop larger, mobile smaller */
+  height: auto !important;
+  max-width: none !important;
+  display: block !important;
+  margin: 8px auto 18px auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 8px 36px rgba(92,17,102,0.55)) !important;
+  transition: transform .18s ease, width .18s ease !important;
+  z-index: 6 !important;
+}
+
+/* Soft glowing backdrop */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 6px auto 12px auto;
+  padding: 8px;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.06), transparent 40%);
+  box-shadow: 0 8px 28px rgba(92, 17, 102, 0.20), inset 0 0 28px rgba(252, 65, 184, 0.03);
+  z-index: 5;
+}
+
+/* Desktop extra boost (optional) */
+@media (min-width: 1400px) {
+  .hero-logo { width: clamp(320px, 18vw, 680px) !important; }
+}
+
+/* Mobile tuning */
+@media (max-width: 720px) {
+  .hero-logo { width: clamp(96px, 28vw, 180px) !important; }
+  .hero-logo-wrap { padding: 6px; }
+}/* DEBUG: force large logo */
+.hero-logo {
+  width: 420px !important;
+  max-width: 92% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 6px auto 18px auto !important;
+  z-index: 9999 !important;
+  outline: 3px solid rgba(0,255,0,0.45) !important; /* remove later */
+}
+
+/* mobile fallback */
+@media (max-width:720px){
+  .hero-logo { width: 180px !important; max-width: 86% !important; }
+}
+/* --- FORCED HERO LOGO SIZING — paste at end of file --- */
+
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 12px auto;
+  padding: 8px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.04), transparent 40%);
+  z-index: 6 !important;
+}
+
+/* Force a noticeably bigger responsive logo (overrides other rules) */
+.hero-logo {
+  width: clamp(280px, 22vw, 680px) !important;
+  max-width: 96% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 6px auto 18px auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 12px 44px rgba(92,17,102,0.55)) !important;
+  transition: transform .18s ease, width .18s ease !important;
+  z-index: 7 !important;
+}
+
+/* Desktop extra boost (very large screens) */
+@media (min-width: 1400px) {
+  .hero-logo { width: clamp(360px, 18vw, 900px) !important; }
+}
+
+/* Mobile tuning */
+@media (max-width: 720px) {
+  .hero-logo { width: clamp(120px, 30vw, 220px) !important; }
+  .hero-logo-wrap { padding: 6px !important; }
+}/* Remove debug outline and replace with a subtle glow */
+.hero-logo {
+  outline: none !important;                /* remove the green debug outline */
+  border: none !important;
+  box-shadow: 0 12px 44px rgba(92,17,102,0.55) !important; /* main neon glow */
+}
+
+/* Keep the wrapper styling */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 12px auto;
+  padding: 8px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.04), transparent 40%);
+  z-index: 6 !important;
+}
+
+/* Improve keyboard accessibility: show a soft ring for focus, not the ugly box */
+.hero-logo:focus-visible {
+  outline: none !important;
+  box-shadow:
+    0 12px 44px rgba(92,17,102,0.55),
+    0 0 0 8px rgba(252,65,184,0.08) !important;
+}
+
+/* Optional hover lift */
+.hero-logo:hover {
+  transform: translateY(-4px) scale(1.02);
+  transition: transform .18s ease;
+}
+/* --- Mobile improvement block: paste at end of file --- */
+
+/* ensure full height and allow content to shift up on short screens */
+html, body, #root {
+  height: 100%;
+}
+
+/* wrapper */
 .home-viewport {
   position: relative;
   min-height: 100vh;
@@ -8,61 +894,58 @@
   display: block;
 }
 
-/* inner content container controls vertical placement */
+/* hero-inner: push content toward the top (not centered vertically) */
 .hero-inner {
   position: relative;
   z-index: 6;
   width: 100%;
-  max-width: 920px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* push content toward top so it doesn't look centered/shrunk */
-  padding: 8vh 18px 6vh 18px; /* top padding gives breathing room but not huge blank space */
+  justify-content: flex-start; /* important: don't vertically center */
+  padding: 6vh 18px 6vh 18px; /* smaller top padding than before */
   box-sizing: border-box;
+  transform: translateY(0);
 }
 
-/* reduce top background overlays on small screens so they're not taking visual space */
+/* Reduce the visual footprint of the top overlays (they were creating a big empty band) */
 .hero-cyber-bg.hero-cyber-bg-1,
 .hero-cyber-bg.hero-cyber-bg-2,
 .hero-pixel-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* default overlay is OK on desktop; will be tuned on mobile below */
 }
 
-/* tweak hero logo and spacing */
+/* logo + spacing */
 .hero-logo-wrap {
   display: block;
   width: fit-content;
-  margin: 6px auto 10px auto;
+  margin: 4px auto 10px auto;
   padding: 6px;
   border-radius: 12px;
-  background: radial-gradient(ellipse at center, rgba(90,218,255,0.03), transparent 40%);
   z-index: 7;
 }
 
 .hero-logo {
-  width: clamp(140px, 26vw, 420px); /* responsive but larger on phones */
+  width: clamp(160px, 24vw, 480px);
   height: auto;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 10px 36px rgba(92,17,102,0.45));
-  transition: transform .18s ease;
 }
 
-/* title and subtitle sizing */
+/* title/subtitle */
 .esports-title {
   color: #ff6ad0;
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(28px, 7.2vw, 56px);
+  font-size: clamp(28px, 6.2vw, 56px);
   text-align: center;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  letter-spacing: 0.6px;
+  margin: 6px 0 6px 0;
   z-index: 7;
-  text-shadow: 0 8px 30px rgba(252,65,184,0.18);
 }
 
 .esports-subtitle {
@@ -72,63 +955,59 @@
   margin-bottom: 14px;
   text-align: center;
   z-index: 7;
-  text-shadow: 0 6px 22px rgba(252,65,184,0.06);
 }
 
-/* CTA larger on mobile */
+/* CTA and socials */
 .hero-cta-btn {
-  display: inline-block;
-  padding: 14px 34px;
-  font-size: clamp(14px, 4.2vw, 22px);
+  padding: 12px 32px;
+  font-size: clamp(14px, 4vw, 22px);
   border-radius: 14px;
   text-decoration: none;
   color: #fff;
-  margin: 8px 0 14px 0;
-  z-index: 7;
-  box-shadow: 0 10px 40px rgba(90,218,255,0.08);
-}
-
-/* socials bigger and spaced for touch */
-.hero-socials {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-  margin-bottom: 18px;
-  z-index: 7;
-}
-.hero-social-btn {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-
-/* news widget sizing */
-.esports-news-widget, .news-widget {
-  width: min(92%, 420px);
-  margin: 8px auto 24px auto;
+  margin: 8px 0 12px 0;
   z-index: 7;
 }
 
-/* Make hero visually taller on short screens: reduce empty background band */
+.hero-socials { display:flex; gap:12px; margin-top:8px; margin-bottom:16px; z-index:7; }
+.hero-social-btn { width:44px; height:44px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; font-size:20px; }
+
+/* news widget width */
+.esports-news-widget, .news-widget { width: min(92%, 420px); margin: 8px auto 20px auto; z-index:7; }
+
+/* ----- MOBILE (phones) ----- */
 @media (max-width: 720px) {
-  .hero-inner { padding-top: 6vh; padding-bottom: 6vh; }
+  /* pull hero content upward so it doesn't sit in the center with large empty background above */
+  .hero-inner {
+    padding-top: 4vh;
+    padding-bottom: 5vh;
+    transform: translateY(-8vh); /* moves content up into the top area */
+  }
+
+  /* make top overlays less tall/opaque so they don't create a visual band */
+  .hero-cyber-bg.hero-cyber-bg-1 { opacity: 0.22; transform: translateY(-6vh); }
+  .hero-cyber-bg.hero-cyber-bg-2 { opacity: 0.14; transform: translateY(-4vh); }
+  .hero-pixel-overlay { opacity: 0.12; transform: translateY(-3vh); }
+
+  /* bigger touch-friendly hero items */
   .hero-logo { width: clamp(140px, 34vw, 260px); }
-  .esports-title { font-size: clamp(26px, 10vw, 40px); margin-top: 6px; }
-  .esports-subtitle { font-size: clamp(12px, 4.4vw, 16px); margin-bottom: 12px; }
-  .hero-cta-btn { padding: 12px 28px; font-size: 18px; }
-  .hero-social-btn { width: 46px; height:46px; font-size:20px; }
-  /* tone down overlay opacity on mobile so hero reads closer to top */
-  .hero-cyber-bg.hero-cyber-bg-1 { opacity: 0.28; transform: translateY(-6vh); }
-  .hero-cyber-bg.hero-cyber-bg-2 { opacity: 0.18; transform: translateY(-4vh); }
-  .hero-pixel-overlay { opacity: 0.16; transform: translateY(-3vh); }
+  .esports-title { font-size: clamp(22px, 9.5vw, 40px); margin-top: 4px; }
+  .esports-subtitle { font-size: clamp(12px, 4.6vw, 16px); margin-bottom: 10px; }
+  .hero-cta-btn { padding: 12px 26px; font-size: 18px; border-radius: 12px; }
+  .hero-social-btn { width:46px; height:46px; font-size:20px; }
+
+  /* reduce the header/nav height if you have a fixed top bar; this helps push content up */
+  header, .site-header, .topbar, .nav {
+    height: auto !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    min-height: 0 !important;
+  }
 }
 
-/* Extra large desktops */
-@media (min-width: 1200px) {
-  .hero-inner { padding-top: 10vh; padding-bottom: 8vh; }
-  .hero-logo { width: clamp(280px, 18vw, 720px); }
+/* ----- VERY SMALL PHONES / notch adjustments ----- */
+@media (max-width: 380px) {
+  .hero-inner { transform: translateY(-10vh); padding-top: 3.5vh; }
+  .hero-logo { width: clamp(110px, 38vw, 200px); }
+  .esports-title { font-size: clamp(20px, 12vw, 34px); }
+  .hero-cta-btn { padding: 10px 22px; font-size: 16px; }
 }
