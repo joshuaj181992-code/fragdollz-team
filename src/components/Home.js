@@ -5,33 +5,35 @@ import { EsportsNewsWidget } from "./EsportsNewsWidget";
 export default function Home() {
   return (
     <div className="home-viewport">
-      {/* Background overlays */}
       <div className="hero-cyber-bg hero-cyber-bg-1" />
       <div className="hero-cyber-bg hero-cyber-bg-2" />
       <div className="hero-pixel-overlay"></div>
 
-      {/* Main content container */}
       <div className="hero-inner">
         <div className="hero-logo-wrap">
           <img
             src="/images/logooo.png"
             alt="FragDollz Mascot"
             className="hero-logo"
-          />
+            onError={(e) => {
+              // If /images/logooo.png fails, try /logo192.png (CRA default). If that fails, use placeholder.
+              const img = e.currentTarget;
+              if (!img.dataset.attempt) {
+                img.dataset.attempt = "1";
+                img.src = "/logo192.png";
+              } else if (img.dataset.attempt === "1") {
+                img.dataset.attempt = "2";
+                img.src = "https://via.placeholder.com/420x420.png?text=FragDollz+Logo";
+              }
+            }}
+            loading="eager"
+            />
         </div>
 
         <h1 className="esports-title">FragDollz</h1>
+        <div className="esports-subtitle">Next-gen Gamer Girl Power. Win the Crowd.</div>
 
-        <div className="esports-subtitle">
-          Next-gen Gamer Girl Power. Win the Crowd.
-        </div>
-
-        <a
-          href="https://twitch.tv/fragdollz"
-          className="hero-cta-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://twitch.tv/fragdollz" className="hero-cta-btn" target="_blank" rel="noopener noreferrer">
           WATCH US LIVE
         </a>
 
