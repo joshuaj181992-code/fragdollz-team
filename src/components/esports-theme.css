@@ -848,4 +848,34 @@ body,
 @media (max-width: 720px) {
   .hero-logo { width: clamp(120px, 30vw, 220px) !important; }
   .hero-logo-wrap { padding: 6px !important; }
+}/* Remove debug outline and replace with a subtle glow */
+.hero-logo {
+  outline: none !important;                /* remove the green debug outline */
+  border: none !important;
+  box-shadow: 0 12px 44px rgba(92,17,102,0.55) !important; /* main neon glow */
+}
+
+/* Keep the wrapper styling */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 12px auto;
+  padding: 8px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.04), transparent 40%);
+  z-index: 6 !important;
+}
+
+/* Improve keyboard accessibility: show a soft ring for focus, not the ugly box */
+.hero-logo:focus-visible {
+  outline: none !important;
+  box-shadow:
+    0 12px 44px rgba(92,17,102,0.55),
+    0 0 0 8px rgba(252,65,184,0.08) !important;
+}
+
+/* Optional hover lift */
+.hero-logo:hover {
+  transform: translateY(-4px) scale(1.02);
+  transition: transform .18s ease;
 }
