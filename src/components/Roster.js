@@ -3,16 +3,15 @@ import "./esports-theme.css";
 
 const players = [
   {
-    name: "GamerBelle",
-    handle: "@gamerbelle",
+    name: "JENNDOTEXE",
+    handle: "@JENNDOTEXT",
     role: "Captain",
-    img: "/images/gg1.png",
+    img: "/images/jenn.png",
     socials: {
-      twitch: "https://twitch.tv/gamerbelle",
-      twitter: "https://twitter.com/gamerbelle",
-      instagram: "https://instagram.com/gamerbelle"
+      twitch: "https://www.twitch.tv/jenndotexe",
+      Kick: "https://kick.com/jenndotexe"
     },
-    quote: "Bringing the heat and the hype!"
+    quote: "It is what it is!!"
   },
   {
     name: "SnipaQueen",
