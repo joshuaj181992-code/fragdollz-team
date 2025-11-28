@@ -879,22 +879,52 @@ body,
   transform: translateY(-4px) scale(1.02);
   transition: transform .18s ease;
 }
-/* --- Mobile improvement block: paste at end of file --- */
+/* ===== CLEAN HERO + NAV OVERRIDES (paste at end of file) =====
+   This block consolidates logo sizing, removes debug outline,
+   tightens mobile spacing and reduces the large top blank band.
+   It intentionally uses no !important except where necessary and
+   is safe to append as an override. */
 
-/* ensure full height and allow content to shift up on short screens */
-html, body, #root {
-  height: 100%;
-}
-
-/* wrapper */
-.home-viewport {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
+/* REMOVE any debug outline left behind */
+.hero-logo {
+  outline: none;
+  border: none;
+  box-shadow: 0 12px 44px rgba(92,17,102,0.55);
+  transition: transform .18s ease, width .18s ease;
+  z-index: 7;
   display: block;
+  object-fit: contain;
 }
 
-/* hero-inner: push content toward the top (not centered vertically) */
+/* wrapper for subtle glow */
+.hero-logo-wrap {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 12px auto;
+  padding: 8px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(90,218,255,0.04), transparent 40%);
+  box-shadow: 0 8px 28px rgba(92, 17, 102, 0.12), inset 0 0 18px rgba(252,65,184,0.03);
+  z-index: 6;
+}
+
+/* Responsive, single source of truth for logo size */
+.hero-logo {
+  /* responsive clamp: min 140px, responsive 20vw, max 480px */
+  width: clamp(140px, 20vw, 480px);
+  max-width: 96%;
+  height: auto;
+  margin: 6px auto 18px auto;
+}
+
+/* Larger on very wide screens but keep ratio */
+@media (min-width: 1400px) {
+  .hero-logo {
+    width: clamp(280px, 18vw, 720px);
+  }
+}
+
+/* HERO INNER (controls vertical placement) */
 .hero-inner {
   position: relative;
   z-index: 6;
@@ -904,110 +934,72 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* important: don't vertically center */
-  padding: 6vh 18px 6vh 18px; /* smaller top padding than before */
+  justify-content: flex-start; /* don't center -> avoids 'shrunken' look */
+  padding: 6vh 18px 6vh 18px;
   box-sizing: border-box;
   transform: translateY(0);
 }
 
-/* Reduce the visual footprint of the top overlays (they were creating a big empty band) */
+/* Reduce overlay visual height so hero content sits higher */
 .hero-cyber-bg.hero-cyber-bg-1,
 .hero-cyber-bg.hero-cyber-bg-2,
 .hero-pixel-overlay {
-  position: absolute;
-  inset: 0;
   pointer-events: none;
-  /* default overlay is OK on desktop; will be tuned on mobile below */
+  transition: opacity .28s ease, transform .28s ease;
 }
 
-/* logo + spacing */
-.hero-logo-wrap {
-  display: block;
-  width: fit-content;
-  margin: 4px auto 10px auto;
-  padding: 6px;
-  border-radius: 12px;
-  z-index: 7;
+/* NAV & TOP BAR adjustments (fix large top padding causing white/empty band) */
+nav, header, .site-header, .topbar, .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  /* keep nav compact; adjust spacing below for mobile */
+  padding: 16px 0;
 }
 
-.hero-logo {
-  width: clamp(160px, 24vw, 480px);
-  height: auto;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 36px rgba(92,17,102,0.45));
+/* adjust page content top padding to match nav height */
+body, .esports-bg {
+  padding-top: 72px; /* set to an appropriate nav height (lowered from 90) */
 }
 
-/* title/subtitle */
-.esports-title {
-  color: #ff6ad0;
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(28px, 6.2vw, 56px);
-  text-align: center;
-  margin: 6px 0 6px 0;
-  z-index: 7;
-}
-
-.esports-subtitle {
-  font-family: 'Orbitron', Arial, sans-serif;
-  font-size: clamp(12px, 3.6vw, 18px);
-  color: #ffffff;
-  margin-bottom: 14px;
-  text-align: center;
-  z-index: 7;
-}
-
-/* CTA and socials */
-.hero-cta-btn {
-  padding: 12px 32px;
-  font-size: clamp(14px, 4vw, 22px);
-  border-radius: 14px;
-  text-decoration: none;
-  color: #fff;
-  margin: 8px 0 12px 0;
-  z-index: 7;
-}
-
-.hero-socials { display:flex; gap:12px; margin-top:8px; margin-bottom:16px; z-index:7; }
-.hero-social-btn { width:44px; height:44px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; font-size:20px; }
-
-/* news widget width */
-.esports-news-widget, .news-widget { width: min(92%, 420px); margin: 8px auto 20px auto; z-index:7; }
-
-/* ----- MOBILE (phones) ----- */
+/* ---------- MOBILE TUNING ---------- */
 @media (max-width: 720px) {
-  /* pull hero content upward so it doesn't sit in the center with large empty background above */
+  /* pull hero content upward so it doesn't appear centered in a big band */
   .hero-inner {
-    padding-top: 4vh;
+    padding-top: 4.5vh;
     padding-bottom: 5vh;
-    transform: translateY(-8vh); /* moves content up into the top area */
+    transform: translateY(-6vh); /* nudges hero up into the top area */
   }
 
-  /* make top overlays less tall/opaque so they don't create a visual band */
-  .hero-cyber-bg.hero-cyber-bg-1 { opacity: 0.22; transform: translateY(-6vh); }
-  .hero-cyber-bg.hero-cyber-bg-2 { opacity: 0.14; transform: translateY(-4vh); }
-  .hero-pixel-overlay { opacity: 0.12; transform: translateY(-3vh); }
+  /* tone down overlays so they don't create visual band at top */
+  .hero-cyber-bg.hero-cyber-bg-1 { opacity: 0.20; transform: translateY(-5vh); }
+  .hero-cyber-bg.hero-cyber-bg-2 { opacity: 0.12; transform: translateY(-3vh); }
+  .hero-pixel-overlay { opacity: 0.10; transform: translateY(-2.5vh); }
 
-  /* bigger touch-friendly hero items */
-  .hero-logo { width: clamp(140px, 34vw, 260px); }
-  .esports-title { font-size: clamp(22px, 9.5vw, 40px); margin-top: 4px; }
-  .esports-subtitle { font-size: clamp(12px, 4.6vw, 16px); margin-bottom: 10px; }
-  .hero-cta-btn { padding: 12px 26px; font-size: 18px; border-radius: 12px; }
-  .hero-social-btn { width:46px; height:46px; font-size:20px; }
+  /* Logo + title + subtitle sizing for compact but visible hero */
+  .hero-logo { width: clamp(120px, 30vw, 260px); margin-top: 6px; }
+  .esports-title { font-size: clamp(20px, 9vw, 36px); margin-top: 6px; }
+  .esports-subtitle { font-size: clamp(12px, 4.4vw, 16px); margin-bottom: 12px; }
 
-  /* reduce the header/nav height if you have a fixed top bar; this helps push content up */
-  header, .site-header, .topbar, .nav {
-    height: auto !important;
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-    min-height: 0 !important;
-  }
+  /* CTA + socials */
+  .hero-cta-btn { font-size: 18px; padding: 12px 26px; border-radius: 12px; width: auto; max-width: 92vw; }
+  .hero-socials { gap: 12px; margin-top: 8px; }
+  .hero-social-btn { width: 46px; height: 46px; font-size: 20px; }
+
+  /* reduce body top padding a touch on small screens */
+  body, .esports-bg { padding-top: 62px; }
+  nav { padding: 12px 0; }
 }
 
-/* ----- VERY SMALL PHONES / notch adjustments ----- */
+/* Very small phones / notch adjustments */
 @media (max-width: 380px) {
-  .hero-inner { transform: translateY(-10vh); padding-top: 3.5vh; }
-  .hero-logo { width: clamp(110px, 38vw, 200px); }
-  .esports-title { font-size: clamp(20px, 12vw, 34px); }
-  .hero-cta-btn { padding: 10px 22px; font-size: 16px; }
+  .hero-inner { transform: translateY(-8vh); padding-top: 3.5vh; }
+  .hero-logo { width: clamp(96px, 36vw, 200px); }
+  .esports-title { font-size: clamp(18px, 12vw, 30px); }
+  .hero-cta-btn { font-size: 16px; padding: 10px 20px; }
 }
+
+/* QUICK DEBUG UTILITY (remove after verifying) */
+/* .hero-logo { outline: none !important; } */
