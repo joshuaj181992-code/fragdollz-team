@@ -89,6 +89,7 @@ export default function Roster() {
 
                 <div style={{margin: "7px 0", color: "#fff"}}>
                   <b>Connect:</b><br />
+
                   {/* Twitch */}
                   {socials.twitch && (
                     <a
@@ -99,7 +100,8 @@ export default function Roster() {
                       onClick={(e) => e.stopPropagation()}
                       title="Open Twitch profile"
                     >
-                      <i className="fa-brands fa-twitch" style={{marginRight:8}} /> Twitch
+                      <svg width="16" height="16" viewBox="0 0 24 24" style={{marginRight:8}} aria-hidden="true"><path fill="currentColor" d="M4 3h14l-2 4v9h-3v3H9l-3 3V6z"></path></svg>
+                      Twitch
                     </a>
                   )}
 
@@ -113,7 +115,8 @@ export default function Roster() {
                       onClick={(e) => e.stopPropagation()}
                       title="Open X profile"
                     >
-                      <i className="fa-brands fa-x-twitter" style={{marginRight:8}} /> X
+                      <svg width="16" height="16" viewBox="0 0 24 24" style={{marginRight:8}} aria-hidden="true"><path fill="currentColor" d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 7v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5"></path></svg>
+                      X
                     </a>
                   )}
 
@@ -127,7 +130,8 @@ export default function Roster() {
                       onClick={(e) => e.stopPropagation()}
                       title="Open Instagram profile"
                     >
-                      <i className="fa-brands fa-instagram" style={{marginRight:8}} /> Instagram
+                      <svg width="16" height="16" viewBox="0 0 24 24" style={{marginRight:8}} aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"></path></svg>
+                      Instagram
                     </a>
                   )}
 
@@ -151,7 +155,7 @@ export default function Roster() {
                       onClick={(e) => e.stopPropagation()}
                       title="Open Kick profile"
                     >
-                      {/* Inline Kick logo (simple K icon) */}
+                      {/* Inline Kick logo (simple badge) */}
                       <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style={{flexShrink:0}}>
                         <circle cx="12" cy="12" r="11" fill="#fff" opacity="0.08"/>
                         <path d="M7 17V7h3.5l2.5 5 2.5-5H19v10h-3.5l-2.5-5-2.5 5H7z" fill="#fff"/>

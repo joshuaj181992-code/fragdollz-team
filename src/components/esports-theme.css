@@ -1568,4 +1568,26 @@ body, .esports-bg {
   border-radius:6px;
   margin-right:8px;
 }
-*/
+*//* ===== social link styles for roster (add to end of file) ===== */
+.flip-card-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.flip-card-back a:hover,
+.flip-card-back a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+}
+
+/* Make sure the inline Kick svg is visible and white */
+.flip-card-back a svg { width: 18px; height: 18px; display: inline-block; vertical-align: middle; }
+.flip-card-back a svg path { fill: #fff; }
